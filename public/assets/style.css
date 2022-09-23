@@ -1,0 +1,40 @@
+.box {
+    position: fixed;
+    width: 30%;
+    height: 50%;
+    margin-bottom: 5%;
+    margin-top: 10%;
+    margin-right: 10%;
+    margin-left: 30%;
+    background: #C497EB;
+    box-shadow: 0em 0em 2em grey;
+    border-radius:20px;
+    border: 3px solid black;
+  }
+
+.titreCo{
+    text-align: center;
+    font-size: 30px;
+}
+
+.inscriptionLien{
+    position: fixed;
+    top: 70%;
+    left: 40%;
+
+}
+
+.tbIdC{
+    margin: 8% 29%;
+    background-color:rgb(158, 70, 210);
+    
+}
+
+.tbMdpC{
+    margin: 3% 29%;
+    background-color:rgb(158, 70, 210);
+}
+
+::placeholder { 
+    color: rgb(252, 171, 251);
+  }
