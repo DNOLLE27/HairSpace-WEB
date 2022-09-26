@@ -11,7 +11,7 @@ class PrincipalController extends AbstractController
 
     
     /**
-     * @Route("/principal", name="app_principal")
+     * @Route("", name="app_principal")
      */
     public function index(): Response
     {
@@ -19,6 +19,7 @@ class PrincipalController extends AbstractController
             'controller_name' => 'PrincipalController',
         ]);
     }
+
 
     
 

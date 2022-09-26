@@ -5,7 +5,7 @@
     margin-bottom: 5%;
     margin-top: 10%;
     margin-right: 10%;
-    margin-left: 30%;
+    margin-left: 35%;
     background: #C497EB;
     box-shadow: 0em 0em 2em grey;
     border-radius:20px;
@@ -19,13 +19,13 @@
 
 .inscriptionLien{
     position: fixed;
-    top: 70%;
-    left: 40%;
+    top: 73%;
+    left: 45.75%;
 
 }
 
 .tbIdC{
-    margin: 8% 29%;
+    margin: 6% 29%;
     background-color:rgb(158, 70, 210);
     
 }
@@ -38,3 +38,9 @@
 ::placeholder { 
     color: rgb(252, 171, 251);
   }
+
+.btnConnect{
+    position: fixed;
+    top: 65%;
+    left: 45.5%;
+}
