@@ -28,7 +28,7 @@ class Avis
     private $avs_date;
 
     /**
-     * @ORM\ManyToOne(targetEntity=utilisateurs::class)
+     * @ORM\ManyToOne(targetEntity=Utilisateurs::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $avs_utl_num;
