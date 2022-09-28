@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\TbPrestationsRepository;
+use App\Repository\PrestationsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TbPrestationsRepository::class)
+ * @ORM\Entity(repositoryClass=PrestationsRepository::class)
  */
-class TbPrestations
+class Prestations
 {
     /**
      * @ORM\Id
@@ -16,11 +16,6 @@ class TbPrestations
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $prs_id;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -40,18 +35,6 @@ class TbPrestations
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getPrsId(): ?int
-    {
-        return $this->prs_id;
-    }
-
-    public function setPrsId(int $prs_id): self
-    {
-        $this->prs_id = $prs_id;
-
-        return $this;
     }
 
     public function getPrsImage(): ?string

@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\TbContactRepository;
+use App\Repository\ContactRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TbContactRepository::class)
+ * @ORM\Entity(repositoryClass=ContactRepository::class)
  */
-class TbContact
+class Contact
 {
     /**
      * @ORM\Id

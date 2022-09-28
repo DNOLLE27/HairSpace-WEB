@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\TbAvisRepository;
+use App\Repository\AvisRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TbAvisRepository::class)
+ * @ORM\Entity(repositoryClass=AvisRepository::class)
  */
-class TbAvis
+class Avis
 {
     /**
      * @ORM\Id
@@ -28,7 +28,7 @@ class TbAvis
     private $avs_date;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Tbutilisateurs::class, inversedBy="utl_num")
+     * @ORM\ManyToOne(targetEntity=utilisateurs::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $avs_utl_num;
@@ -62,12 +62,12 @@ class TbAvis
         return $this;
     }
 
-    public function getAvsUtlNum(): ?Tbutilisateurs
+    public function getAvsUtlNum(): ?utilisateurs
     {
         return $this->avs_utl_num;
     }
 
-    public function setAvsUtlNum(?Tbutilisateurs $avs_utl_num): self
+    public function setAvsUtlNum(?utilisateurs $avs_utl_num): self
     {
         $this->avs_utl_num = $avs_utl_num;
 

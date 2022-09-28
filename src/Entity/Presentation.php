@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\TbPresentationRepository;
+use App\Repository\PresentationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TbPresentationRepository::class)
+ * @ORM\Entity(repositoryClass=PresentationRepository::class)
  */
-class TbPresentation
+class Presentation
 {
     /**
      * @ORM\Id
@@ -18,33 +18,28 @@ class TbPresentation
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
-    private $pst_id;
+    private $pst_image;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $pst_adresse;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $pst_image;
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getPstId(): ?int
+    public function getPstImage(): ?string
     {
-        return $this->pst_id;
+        return $this->pst_image;
     }
 
-    public function setPstId(int $pst_id): self
+    public function setPstImage(string $pst_image): self
     {
-        $this->pst_id = $pst_id;
+        $this->pst_image = $pst_image;
 
         return $this;
     }
@@ -57,18 +52,6 @@ class TbPresentation
     public function setPstAdresse(string $pst_adresse): self
     {
         $this->pst_adresse = $pst_adresse;
-
-        return $this;
-    }
-
-    public function getPstImage(): ?string
-    {
-        return $this->pst_image;
-    }
-
-    public function setPstImage(string $pst_image): self
-    {
-        $this->pst_image = $pst_image;
 
         return $this;
     }
