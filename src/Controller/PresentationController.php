@@ -15,6 +15,8 @@ class PresentationController extends AbstractController
     {
         return $this->render('presentation/index.html.twig', [
             'controller_name' => 'PresentationController',
+            'nomSalon' => 'HairSpace',
+            'adresse' => 'jsp où dans l espace',
         ]);
     }
 }

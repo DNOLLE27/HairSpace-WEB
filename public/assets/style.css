@@ -1,11 +1,11 @@
 .box {
     position: fixed;
-    width: 30%;
-    height: 50%;
+    width: 35%;
+    height: 60%;
     margin-bottom: 5%;
-    margin-top: 10%;
+    margin-top: 6%;
     margin-right: 10%;
-    margin-left: 35%;
+    margin-left: 32%;
     background: #C497EB;
     box-shadow: 0em 0em 2em grey;
     border-radius:20px;
@@ -17,6 +17,12 @@
     font-size: 30px;
 }
 
+.titreInsc{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 7%;
+}
+
 .inscriptionLien{
     position: fixed;
     top: 73%;
@@ -24,14 +30,44 @@
 
 }
 
+.connexionLien{
+    position: fixed;
+    top: 73%;
+    left: 45.5%;
+
+}
+
 .tbIdC{
-    margin: 6% 29%;
+    margin: 6% 33%;
+    background-color:rgb(158, 70, 210);
+    
+}
+
+.tbIdI{
+    margin: 2% 32%;
+    background-color:rgb(158, 70, 210);
+    
+}
+
+.tbMailI{
+    margin: auto 32%;
     background-color:rgb(158, 70, 210);
     
 }
 
 .tbMdpC{
-    margin: 3% 29%;
+    margin: 3% 33%;
+    background-color:rgb(158, 70, 210);
+}
+
+
+.tbMdpI{
+    margin: 2% 32%;
+    background-color:rgb(158, 70, 210);
+}
+
+.tbMdpSI{
+    margin: auto 32%;
     background-color:rgb(158, 70, 210);
 }
 
@@ -41,6 +77,41 @@
 
 .btnConnect{
     position: fixed;
-    top: 65%;
+    top: 60%;
     left: 45.5%;
+}
+
+.btnConnectI{
+    position: fixed;
+    top: 63%;
+    left: 45.5%;
+}
+
+.align{
+    text-align: center;
+}
+
+.example-wrapper { 
+    margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; 
+}
+
+.example-wrapper code { 
+    background: #F5F5F5; padding: 2px 6px; 
+}
+
+.textPresentation{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 20%;
+    font-size: 22px;
+
+}
+
+.imgPresentation{
+    width: 80%;
+    margin-top: 10%;
+}
+
+.lienColor{
+    color: rgb(0, 255, 98);
 }
