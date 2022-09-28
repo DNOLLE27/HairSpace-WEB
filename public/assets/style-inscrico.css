@@ -1,0 +1,25 @@
+body
+{
+    background: none !important;
+    background-color: #907094 !important;
+}
+
+.box
+{
+    background-color: #FEE9FF;
+}
+
+.box input
+{
+    background-color: #DBAAE3;
+}
+
+::placeholder
+{
+    color: #1D413F;
+}
+
+.connexionLien, .inscriptionLien
+{
+    color: #2E49C0 !important;
+}
