@@ -33,7 +33,7 @@ class Utilisateurs
     private $utl_mdp;
 
     /**
-     * @ORM\ManyToOne(targetEntity=droits::class)
+     * @ORM\ManyToOne(targetEntity=Droits::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $utl_drt_id;
