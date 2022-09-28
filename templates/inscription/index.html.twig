@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InscriptionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="box">
+    </br>
+    <p class="titreInsc"> Inscrivez vous </p>
+    <input class="tbIdI" id="id" type="text" size="22" placeholder="Identifiant">
+    <input class="tbMailI" id="email" type="text" size="22" placeholder="Adresse email">
+    <input class="tbMdpI" id="mdp" type="text" size="22" placeholder="Mot de passe">
+    <input class="tbMdpSI" id="mdpS" type="text" size="22" placeholder="Confirmer le mot de passe">
+    <a href="connexion" class="btn btn-secondary btnConnectI ">Se connecter</a>  
+    <a class="connexionLien" href="connexion" class="btn">Connectez vous !</a>   
+</div>
+{% endblock %}
