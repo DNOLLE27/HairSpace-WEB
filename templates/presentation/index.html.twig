@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Présentation{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper align">
+    <h1> {{ nomSalon }} </h1>
+</div>
+
+<table>
+        <tr>
+            <td><p class="textPresentation">Notre salon de coiffure {{ nomSalon }} se trouve dans {{ adresse }}. Nous sommes ouvert tout les jours de 8h à 20h.
+            Vous pouvez réserver par téléphone, mais ceci n'est pas obligatoire. </p>
+            <p class="textPresentation"> Nous coupons cheveux et barbes. Pour en savoir plus sur nos services, cliquer <a class="lienColor" href="prestation">ici</a>.</p></td>
+            <td><img class="imgPresentation" src="assets/img/presentation.jpg"></td>
+        </tr>
+</table>
+
+
+{% endblock %}
