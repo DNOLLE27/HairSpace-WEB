@@ -15,11 +15,14 @@
 <div class="box">
     </br>
     <p class="titreInsc"> Inscrivez vous </p>
-    <input class="tbIdI" id="id" type="text" size="22" placeholder="Identifiant">
-    <input class="tbMailI" id="email" type="text" size="22" placeholder="Adresse email">
-    <input class="tbMdpI" id="mdp" type="text" size="22" placeholder="Mot de passe">
-    <input class="tbMdpSI" id="mdpS" type="text" size="22" placeholder="Confirmer le mot de passe">
-    <a href="connexion" class="btn btn-secondary btnConnectI ">Se connecter</a>  
-    <a class="connexionLien" href="connexion" class="btn">Connectez vous !</a>   
+        
+    {{ form_start(formUtilisateur) }}
+    {{ form_widget(formUtilisateur.utl_identifiant) }}
+    {{ form_widget(formUtilisateur.utl_email) }}
+    {{ form_widget(formUtilisateur.utl_mdp) }}
+    <button type="submit" class="btn btn-secondary btnConnectI ">Se connecter</button> 
+    {{ form_end(formUtilisateur) }}
+    
+    <a class="connexionLien" href="{{ path('app_inscription')}}" class="btn">Connectez vous !</a>   
 </div>
 {% endblock %}
