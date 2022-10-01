@@ -285,3 +285,80 @@ a
     background-color: #EAA4F3;
     font-size: 30px;
 }
+
+#contact_ctc_message
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+    width: 100%;
+    height: 250px;
+}
+
+#contact_ctc_numero
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+    width: 100%;
+}
+
+#contact_ctc_email
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+    width: 100%;
+}
+
+#contact_ctc_prenom
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#contact_ctc_nom
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+.contact-table th
+{
+    text-align: right;
+    text-shadow: 1px 1px 2px rgb(15, 15, 15);
+}
+
+.txt-msg
+{
+    text-align: left !important;
+}
+
+.txt-msg-spacetop
+{
+    margin-top: 10px;
+}
+
+.contact-table
+{
+    border-collapse: separate;
+    border-spacing: 0px 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-body h3
+{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.form-body h4
+{
+    text-shadow: 1px 1px 2px rgb(15, 15, 15);
+    text-align: center;
+}

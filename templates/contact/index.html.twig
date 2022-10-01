@@ -6,18 +6,40 @@
 
 <link href="../assets/style-fix.css" rel="stylesheet" />
 
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="form-body">
+    <h3>Moyens de contact :</h3>
+    
+    <h4>- <u>Numéro :</u> <a href="tel:+33232866523">+33232866523</a></h4>
+    <h4>- <u>Adresse E-Mail :</u> <a href="mailto:contact@spacehair.fr">contact@spacehair.fr</a></h4>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h3>Formulaire de contact :</h3>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/zabethr/Downloads/Documents/github/HairSpace-WEB/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/zabethr/Downloads/Documents/github/HairSpace-WEB/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
+    {{ form_start(ContactType) }}
+        <table class="contact-table">
+            <tr>
+                <th>Nom :</th>
+                <td>{{ form_widget(ContactType.ctc_nom) }}</td>
+                <th>Prénom :</th>
+                <td>{{ form_widget(ContactType.ctc_prenom) }}</td>
+            </tr>
+            <tr>
+                <th colspan="1">E-Mail :</th>
+                <td colspan="3">{{ form_widget(ContactType.ctc_email) }}</td>
+            </tr>
+            <tr>
+                <th colspan="1">Numéro :</th>
+                <td colspan="3">{{ form_widget(ContactType.ctc_numero) }}</td>
+            </tr>
+            <tr>
+                <th class="txt-msg" colspan="4"><div class="txt-msg-spacetop">Message :</div></th>
+            </tr>
+            <tr>
+                <td colspan="4">{{ form_widget(ContactType.ctc_message) }}</td>
+            </tr>
+        </table>
+
+        {{ form_rest(ContactType) }}
+    {{ form_end(ContactType) }}
 </div>
+
 {% endblock %}
