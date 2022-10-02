@@ -288,6 +288,7 @@ a
 
 #contact_ctc_message
 {
+    resize: none;
     color: rgb(0, 0, 0);
     border: #BD62CD 2px solid;
     background-color: #F8CAFF;
@@ -361,4 +362,71 @@ a
 {
     text-shadow: 1px 1px 2px rgb(15, 15, 15);
     text-align: center;
+}
+
+.form-body
+{
+    padding-top: -1px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: #E9B9FF;
+    border: #9428C4 2px solid;
+    border-radius: 50px;
+}
+
+.contact-table button
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+}
+
+.contact-table button:hover 
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-table button:focus 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-table button:focus:hover
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-table button:focus:active 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.message-envoye p
+{
+    text-align: center;
+    color: rgb(0, 255, 0);
+    text-shadow: 1px 1px 2px rgb(0, 100, 0);;
 }
