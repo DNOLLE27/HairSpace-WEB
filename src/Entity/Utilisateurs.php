@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\UtilisateursRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
  */
-class Utilisateurs
+#[UniqueEntity(fields: ['utl_identifiant'], message: 'There is already an account with this utl_identifiant')]
+class Utilisateurs implements UserInterface
 {
     /**
      * @ORM\Id
@@ -88,5 +91,20 @@ class Utilisateurs
         $this->droits = $droits;
 
         return $this;
+    }
+    public function eraseCredentials()
+    {
+    }
+    public function getSalt()
+    {
+    }
+    public function getRoles()
+    {
+    }
+    public function getPassword()
+    {
+    }
+    public function getUsername()
+    {
     }
 }

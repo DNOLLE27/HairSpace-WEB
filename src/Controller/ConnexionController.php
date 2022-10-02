@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Droits;
 use App\Entity\Utilisateurs;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,15 +21,9 @@ class ConnexionController extends AbstractController
         $Ut = $this->getDoctrine()->getRepository(Utilisateurs::class);
 
         $users = $Ut->findAll();
-
-        $Dr = $this->getDoctrine()->getRepository(Droits::class);
-
-        $droits = $Dr->findAll();
-        
-        
+       
         return $this->render('connexion/index.html.twig', [
             'users' => $users,
-            'droits' => $droits,
            
         ]);
 
