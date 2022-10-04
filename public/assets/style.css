@@ -1,7 +1,7 @@
 body
 {
     height: 100%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     background: linear-gradient(#C497EB, #93629F) !important;
     color: black;
     text-shadow: 1px 1px 2px rgb(15, 15, 15);
@@ -231,6 +231,7 @@ a
     margin-right: auto;
     width: 90%;
     background-color: #E9B9FF;
+    margin-bottom: 109px;
 }
 
 .prestation-grid
@@ -375,6 +376,7 @@ a
     background-color: #E9B9FF;
     border: #9428C4 2px solid;
     border-radius: 50px;
+    margin-bottom: 30px;
 }
 
 .contact-table button

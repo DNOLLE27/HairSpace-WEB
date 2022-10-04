@@ -1,4 +1,6 @@
-html
+body
 {
-    height: 100%;
+    height: 100% !important;
+    background-repeat: no-repeat !important;
+    background: linear-gradient(#C497EB, #93629F) !important;
 }
