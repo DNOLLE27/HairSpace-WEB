@@ -1,8 +1,8 @@
 body
 {
-    height: 100%;
-    background-repeat: no-repeat !important;
-    background: linear-gradient(#C497EB, #93629F) !important;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#C497EB, #93629F);
     color: black;
     text-shadow: 1px 1px 2px rgb(15, 15, 15);
 }
@@ -148,12 +148,14 @@ h1, h3
     margin-left: 10%;
     margin-right: 20%;
     font-size: 22px;
-
+    color: black !important;
+    text-shadow: 1px 1px 2px rgb(15, 15, 15) !important;
 }
 
 .imgPresentation{
     width: 80%;
     margin-top: 10%;
+    border-radius: 30px;
 }
 
 .lienColor{
@@ -229,9 +231,9 @@ a
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 80%;
     background-color: #E9B9FF;
-    margin-bottom: 109px;
+    margin-bottom: 50px;
 }
 
 .prestation-grid
@@ -244,11 +246,13 @@ a
 
 .prestation-img
 {
+    margin-top: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: 90%;
     width: 90%;
+    border-radius: 30px;
 }
 
 .prestation-grid-colonne h2
@@ -275,16 +279,22 @@ a
 .conteneur-duree
 {
     margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 160px;
-    height: 50px;
+    width: 200px;
+    height: 60px;
     border: #9F0A88 3px solid;
     text-shadow: none;
     border-radius: 50px;
     background-color: #EAA4F3;
     font-size: 30px;
+}
+
+.conteneur-duree p
+{
+    margin-top: 5px;
 }
 
 #contact_ctc_message
@@ -367,8 +377,8 @@ a
 
 .form-body
 {
-    margin-top: 10px;
-    margin-bottom: 200px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -382,6 +392,7 @@ a
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     
     color: #9F0A88;
     background-color: #E290EC;

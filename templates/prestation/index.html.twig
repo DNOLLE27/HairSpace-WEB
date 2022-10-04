@@ -1,10 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PrestationController!{% endblock %}
+{% block title %}HairSpace - Prestations{% endblock %}
 
 {% block body %}
-
-<link href="../assets/style-fix.css" rel="stylesheet" />
 
 <div class="body-contenu">
     <div class="prestation-grid">
@@ -21,7 +19,17 @@
                     <td><div class="conteneur-prix"><p>{{ unePrestation.prsprix }} €</p></div></td>
                 </tr>
                 <tr>
-                    <td><div class="conteneur-duree"><p>{{ unePrestation.prsduree|date('H:i:s') }}</p></div></td>
+                    <td><div class="conteneur-duree"><p>
+
+                    {% if unePrestation.prsduree|date('H') != '00' %}
+                    {{ unePrestation.prsduree|date('H') }} H
+                    {% endif %}
+
+                    {% if unePrestation.prsduree|date('i') != '00' %}
+                    {{ unePrestation.prsduree|date('i') }} Mins
+                    {% endif %}
+
+                    </p></div></td>
                 </tr>
             </table>
         </div>
