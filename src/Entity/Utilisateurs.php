@@ -3,12 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\UtilisateursRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
  */
-class Utilisateurs
+class Utilisateurs implements UserInterface
 {
     /**
      * @ORM\Id
@@ -35,7 +37,7 @@ class Utilisateurs
     /**
      * @ORM\Column(type="boolean")
      */
-    private $Droits;
+    private $utl_drt_id;
 
     public function getUtlIdentifiant(): ?string
     {
@@ -83,5 +85,20 @@ class Utilisateurs
         $this->Droits = $Droits;
 
         return $this;
+    }
+    public function eraseCredentials()
+    {
+    }
+    public function getSalt()
+    {
+    }
+    public function getRoles()
+    {
+    }
+    public function getPassword()
+    {
+    }
+    public function getUsername()
+    {
     }
 }

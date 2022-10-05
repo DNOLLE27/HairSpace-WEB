@@ -73,4 +73,5 @@ class Avis
 
         return $this;
     }
+
 }
