@@ -1,23 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PrestationController!{% endblock %}
+{% block title %}HairSpace - Prestations{% endblock %}
 
 {% block body %}
 
-<link href="../assets/style-fix.css" rel="stylesheet" />
+<div class="body-contenu">
+    <div class="prestation-grid">
+        {% for unePrestation in Prestations %}
+        <div class="prestation-grid-colonne">
+            <table>
+                <tr>
+                    <td><img class="prestation-img" src="{{ unePrestation.prsimage }}"></td>
+                </tr>
+                <tr>
+                    <td><h2>{{ unePrestation.prslibelle }}</h2></td>
+                </tr>
+                <tr>
+                    <td><div class="conteneur-prix"><p>{{ unePrestation.prsprix }} €</p></div></td>
+                </tr>
+                <tr>
+                    <td><div class="conteneur-duree"><p>
 
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+                    {% if unePrestation.prsduree|date('H') != '00' %}
+                    {{ unePrestation.prsduree|date('H') }} H
+                    {% endif %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                    {% if unePrestation.prsduree|date('i') != '00' %}
+                    {{ unePrestation.prsduree|date('i') }} Mins
+                    {% endif %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/zabethr/Downloads/Documents/github/HairSpace-WEB/src/Controller/PrestationController.php'|file_link(0) }}">src/Controller/PrestationController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/zabethr/Downloads/Documents/github/HairSpace-WEB/templates/prestation/index.html.twig'|file_link(0) }}">templates/prestation/index.html.twig</a></code></li>
-    </ul>
+                    </p></div></td>
+                </tr>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
 </div>
+
 {% endblock %}

@@ -6,7 +6,10 @@ use App\Entity\Utilisateurs;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\ConnexionType;
 
 class ConnexionController extends AbstractController
 {
@@ -16,15 +19,18 @@ class ConnexionController extends AbstractController
     /**
      * @Route("/connexion", name="app_connexion")
      */
-    public function index(): Response
+    public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $Ut = $this->getDoctrine()->getRepository(Utilisateurs::class);
+        $form = $this->createForm(ConnexionType::class);
+        $form->handleRequest($request);
 
-        $users = $Ut->findAll();
-       
+        $id =  $form->get('conx_identifiant')->getData();
+        $mdp =  $form->get('conx_mdp')->getData();
+
+        echo $id.$mdp;
+
         return $this->render('connexion/index.html.twig', [
-            'users' => $users,
-           
+            'ConnexionType' => $form->createView()
         ]);
 
        

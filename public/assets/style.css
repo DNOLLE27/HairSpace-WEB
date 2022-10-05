@@ -1,8 +1,8 @@
 body
 {
-    height: 100%;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background: linear-gradient(#C497EB, #93629F) !important;
+    background-image: linear-gradient(#C497EB, #93629F);
     color: black;
     text-shadow: 1px 1px 2px rgb(15, 15, 15);
 }
@@ -148,12 +148,14 @@ h1, h3
     margin-left: 10%;
     margin-right: 20%;
     font-size: 22px;
-
+    color: black !important;
+    text-shadow: 1px 1px 2px rgb(15, 15, 15) !important;
 }
 
 .imgPresentation{
     width: 80%;
     margin-top: 10%;
+    border-radius: 30px;
 }
 
 .lienColor{
@@ -220,4 +222,222 @@ a
 .link-connexion
 {
     margin-right: 15px !important;
+}
+
+.body-contenu
+{
+    border: #9428C4 3px solid;
+    border-radius: 50px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background-color: #E9B9FF;
+    margin-bottom: 50px;
+}
+
+.prestation-grid
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+}
+
+.prestation-img
+{
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 90%;
+    width: 90%;
+    border-radius: 30px;
+}
+
+.prestation-grid-colonne h2
+{
+    text-decoration: underline;
+    text-shadow: 1px 1px 2px rgb(15, 15, 15);
+    text-align: center;
+}
+
+.conteneur-prix
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 130px;
+    height: 65px;
+    border: #9F0A88 3px solid;
+    text-shadow: none;
+    border-radius: 50px;
+    background-color: #EAA4F3;
+    font-size: 40px;
+}
+
+.conteneur-duree
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 200px;
+    height: 60px;
+    border: #9F0A88 3px solid;
+    text-shadow: none;
+    border-radius: 50px;
+    background-color: #EAA4F3;
+    font-size: 30px;
+}
+
+.conteneur-duree p
+{
+    margin-top: 5px;
+}
+
+#contact_ctc_message
+{
+    resize: none;
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+    width: 100%;
+    height: 250px;
+}
+
+#contact_ctc_numero
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+    width: 100%;
+}
+
+#contact_ctc_email
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+    width: 100%;
+}
+
+#contact_ctc_prenom
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#contact_ctc_nom
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+.contact-table th
+{
+    text-align: right;
+    text-shadow: 1px 1px 2px rgb(15, 15, 15);
+}
+
+.txt-msg
+{
+    text-align: left !important;
+}
+
+.txt-msg-spacetop
+{
+    margin-top: 10px;
+}
+
+.contact-table
+{
+    border-collapse: separate;
+    border-spacing: 0px 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-body h3
+{
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.form-body h4
+{
+    text-shadow: 1px 1px 2px rgb(15, 15, 15);
+    text-align: center;
+}
+
+.form-body
+{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: #E9B9FF;
+    border: #9428C4 2px solid;
+    border-radius: 50px;
+}
+
+.contact-table button
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+}
+
+.contact-table button:hover 
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-table button:focus 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-table button:focus:hover
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-table button:focus:active 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.message-envoye p
+{
+    text-align: center;
+    color: rgb(0, 255, 0);
+    text-shadow: 1px 1px 2px rgb(0, 100, 0);;
 }

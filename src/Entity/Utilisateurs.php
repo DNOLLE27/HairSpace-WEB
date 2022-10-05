@@ -38,12 +38,7 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="boolean")
      */
-    private $droits;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    private $utl_drt_id;
 
     public function getUtlIdentifiant(): ?string
     {
@@ -83,12 +78,12 @@ class Utilisateurs implements UserInterface
 
     public function isDroits(): ?bool
     {
-        return $this->droits;
+        return $this->Droits;
     }
 
-    public function setDroits(bool $droits): self
+    public function setDroits(bool $Droits): self
     {
-        $this->droits = $droits;
+        $this->Droits = $Droits;
 
         return $this;
     }

@@ -14,14 +14,22 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Forms;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
+<<<<<<< HEAD
 use Symfony\Component\Form\FormView;
+=======
+use App\Form\InscriptionType;
+use App\Entity\Utilisateurs;
+>>>>>>> feature_damien
 
 class InscriptionController extends AbstractController
 {
     /**
      * @Route("/inscription", name="app_inscription")
      */
+<<<<<<< HEAD
     public function index(Request $request, EntityManagerInterface $manager): Response
     {
         $user = new Utilisateurs();
@@ -58,6 +66,33 @@ class InscriptionController extends AbstractController
         return $this->render('inscription/index.html.twig', [
             'controller_name' => 'InscriptionController',
             'formUtilisateur' => $form->createview(),
+=======
+    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $utilisateur = new Utilisateurs();
+        $form = $this->createForm(InscriptionType::class,$utilisateur );
+        $form->handleRequest($request);
+
+        $mdp =  $form->get('utl_mdp')->getData();
+        $mdpVerif =  $form->get('utl_mdp_verif')->getData();
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            if ($mdp == $mdpVerif)
+            {
+                $utilisateur->setDroits(0);
+                $entityManager->persist($utilisateur);
+                $entityManager->flush();
+
+                $this->addFlash('success', 'test');
+                return $this->redirectToRoute('app_contact');
+            }
+        }
+
+        return $this->render('inscription/index.html.twig', [
+            'controller_name' => 'InscriptionController',
+            'InscriptionType' => $form->createView()
+>>>>>>> feature_damien
         ]);
     }
 
