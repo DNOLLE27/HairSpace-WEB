@@ -37,7 +37,7 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="boolean")
      */
-    private $utl_drt_id;
+    private $Droits;
 
     public function getUtlIdentifiant(): ?string
     {
