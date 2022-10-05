@@ -18,7 +18,14 @@
     
     <input class="tbMdpC" id="mdp" type="text" placeholder="Mot de passe">
     <a href="connexion" class="btn btn-secondary btnConnect ">Se connecter</a>  
-    <a class="inscriptionLien" href="inscription" class="btn">Inscrivez vous !</a>   
+    <a class="inscriptionLien" href="inscription" class="btn">Inscrivez vous !</a>
+
+    {{ form_start(ConnexionType) }}
+        {{ form_widget(ConnexionType.conx_identifiant) }}
+        {{ form_widget(ConnexionType.conx_mdp) }}
+        <button type="submit">Envoyer</button>
+        {{ form_rest(ConnexionType) }}
+    {{ form_end(ConnexionType) }}
 </div>
 
 {% endblock %}

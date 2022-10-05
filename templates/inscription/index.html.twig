@@ -21,4 +21,14 @@
     <a href="connexion" class="btn btn-secondary btnConnectI ">Se connecter</a>  
     <a class="connexionLien" href="connexion" class="btn">Connectez vous !</a>   
 </div>
+
+{{ form_start(InscriptionType) }}
+    {{ form_widget(InscriptionType.utl_identifiant) }}
+    {{ form_widget(InscriptionType.utl_email) }}
+    {{ form_widget(InscriptionType.utl_mdp) }}
+    {{ form_widget(InscriptionType.utl_mdp_verif) }}
+    <button type="submit">Envoyer</button>
+    {{ form_rest(InscriptionType) }}
+{{ form_end(InscriptionType) }}
+
 {% endblock %}

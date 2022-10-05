@@ -33,15 +33,9 @@ class Utilisateurs
     private $utl_mdp;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Droits::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="boolean")
      */
-    private $utl_drt_id;
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    private $Droits;
 
     public function getUtlIdentifiant(): ?string
     {
@@ -79,14 +73,14 @@ class Utilisateurs
         return $this;
     }
 
-    public function getUtlDrtId(): ?droits
+    public function isDroits(): ?bool
     {
-        return $this->utl_drt_id;
+        return $this->Droits;
     }
 
-    public function setUtlDrtId(?droits $utl_drt_id): self
+    public function setDroits(bool $Droits): self
     {
-        $this->utl_drt_id = $utl_drt_id;
+        $this->Droits = $Droits;
 
         return $this;
     }
