@@ -14,9 +14,6 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
-        
-        
-        
     </head>
     <body>
     
@@ -47,8 +44,11 @@
               </li>
             </ul>
             <form class="d-flex">
-              
-              <a href="connexion" class="nav-link link-connexion">Se connecter</a>
+              {% if app.session.get('ID') != "" %}
+                <a href="deconnexion" class="nav-link link-connexion">Se déconnecter ({{ app.session.get('ID') }} - {% if app.session.get('Droit') == 1 %} Admin {% else %} Utilisateur {% endif %})</a>
+              {% else %}
+                <a href="connexion" class="nav-link link-connexion">Se connecter</a>
+              {% endif %}
             </form>
           </div>
         </div>
