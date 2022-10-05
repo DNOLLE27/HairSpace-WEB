@@ -10,7 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
  */
-#[UniqueEntity(fields: ['utl_identifiant'], message: 'There is already an account with this utl_identifiant')]
 class Utilisateurs implements UserInterface
 {
     /**
