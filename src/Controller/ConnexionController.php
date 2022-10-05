@@ -17,18 +17,38 @@ class ConnexionController extends AbstractController
      */
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $msgErrCo = "";
+
         $form = $this->createForm(ConnexionType::class);
         $form->handleRequest($request);
 
         $id =  $form->get('conx_identifiant')->getData();
         $mdp =  $form->get('conx_mdp')->getData();
 
-        echo $id.$mdp;
+        $repo = $this->getDoctrine()->getRepository(Utilisateurs::class);
+        $Utilisateurs = $repo->findAll();
+        
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            foreach ($Utilisateurs as $unUtilisateur)
+            {
+                if ($unUtilisateur->getUtlIdentifiant() == $id && $unUtilisateur->getUtlMdp() == $mdp)
+                {
+                    $this->get('session')->set('ID', $id);
+                    $this->get('session')->set('Droit', $unUtilisateur->isDroits());
+
+                    return $this->redirectToRoute('index');
+                }
+                else
+                {
+                    $msgErrCo = "Erreur, l'identifiant et le mot de passe saisis sont incorrects !";
+                }
+            }
+        }
 
         return $this->render('connexion/index.html.twig', [
-            'ConnexionType' => $form->createView()
+            'ConnexionType' => $form->createView(),
+            'msgErreurCo' => $msgErrCo
         ]);
     }
-
-    
 }

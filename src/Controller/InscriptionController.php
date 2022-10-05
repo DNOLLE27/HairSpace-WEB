@@ -17,6 +17,8 @@ class InscriptionController extends AbstractController
      */
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $msg_err = "";
+
         $utilisateur = new Utilisateurs();
         $form = $this->createForm(InscriptionType::class,$utilisateur );
         $form->handleRequest($request);
@@ -32,14 +34,19 @@ class InscriptionController extends AbstractController
                 $entityManager->persist($utilisateur);
                 $entityManager->flush();
 
-                $this->addFlash('success', 'test');
-                return $this->redirectToRoute('app_contact');
+                $this->addFlash('success', 'Compte créé, veuillez-vous connecter !');
+                return $this->redirectToRoute('app_connexion');
+            }
+            else
+            {
+                $msg_err = "Erreur, les mots de passes saisis ne correspondent pas !";
             }
         }
 
         return $this->render('inscription/index.html.twig', [
             'controller_name' => 'InscriptionController',
-            'InscriptionType' => $form->createView()
+            'InscriptionType' => $form->createView(),
+            'msgErreur' => $msg_err
         ]);
     }
 }
