@@ -37,6 +37,11 @@ class Contact
      */
     private $ctc_message;
 
+    /**
+     * @ORM\Column(type="string", length=13)
+     */
+    private $ctc_numero;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Contact
     public function setCtcMessage(string $ctc_message): self
     {
         $this->ctc_message = $ctc_message;
+
+        return $this;
+    }
+
+    public function getCtcNumero(): ?string
+    {
+        return $this->ctc_numero;
+    }
+
+    public function setCtcNumero(string $ctc_numero): self
+    {
+        $this->ctc_numero = $ctc_numero;
 
         return $this;
     }

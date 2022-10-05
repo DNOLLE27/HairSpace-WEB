@@ -1,10 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AvisController!{% endblock %}
+{% block title %}HairSpace - Avis{% endblock %}
 
 {% block body %}
-
-<link href="../assets/style-fix.css" rel="stylesheet" />
 
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -13,6 +11,14 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
+    {% for unAvis in avis %}
+        {% for unUser in utilisateurs %}
+            
+            {{unUser.id}}
+        </br>{{unAvis.avscommentaire}}
+          
+        {% endfor %}
+    {% endfor %}
 
     This friendly message is coming from:
     <ul>

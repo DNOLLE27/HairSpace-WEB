@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello InscriptionController!{% endblock %}
+{% block title %}HairSpace - Inscription{% endblock %}
 
 {% block body %}
 
-<link href="../assets/style-fix.css" rel="stylesheet"/>
 <link href="../assets/style-inscrico.css" rel="stylesheet"/>
 
 <style>
@@ -15,11 +14,24 @@
 <div class="box">
     </br>
     <p class="titreInsc"> Inscrivez vous </p>
-    <input class="tbIdI" id="id" type="text" size="22" placeholder="Identifiant">
-    <input class="tbMailI" id="email" type="text" size="22" placeholder="Adresse email">
-    <input class="tbMdpI" id="mdp" type="text" size="22" placeholder="Mot de passe">
-    <input class="tbMdpSI" id="mdpS" type="text" size="22" placeholder="Confirmer le mot de passe">
-    <a href="connexion" class="btn btn-secondary btnConnectI ">Se connecter</a>  
-    <a class="connexionLien" href="connexion" class="btn">Connectez vous !</a>   
+        
+    {{ form_start(formUtilisateur) }}
+    {{ form_widget(formUtilisateur.utl_identifiant) }}
+    {{ form_widget(formUtilisateur.utl_email) }}
+    {{ form_widget(formUtilisateur.utl_mdp) }}
+    <button type="submit" class="btn btn-secondary btnConnectI ">Se connecter</button> 
+    {{ form_end(formUtilisateur) }}
+    
+    <a class="connexionLien" href="{{ path('app_inscription')}}" class="btn">Connectez vous !</a>   
 </div>
+
+{{ form_start(InscriptionType) }}
+    {{ form_widget(InscriptionType.utl_identifiant) }}
+    {{ form_widget(InscriptionType.utl_email) }}
+    {{ form_widget(InscriptionType.utl_mdp) }}
+    {{ form_widget(InscriptionType.utl_mdp_verif) }}
+    <button type="submit">Envoyer</button>
+    {{ form_rest(InscriptionType) }}
+{{ form_end(InscriptionType) }}
+
 {% endblock %}

@@ -32,6 +32,11 @@ class Prestations
      */
     private $prs_duree;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $prs_libelle;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Prestations
     public function setPrsDuree(\DateTimeInterface $prs_duree): self
     {
         $this->prs_duree = $prs_duree;
+
+        return $this;
+    }
+
+    public function getPrsLibelle(): ?string
+    {
+        return $this->prs_libelle;
+    }
+
+    public function setPrsLibelle(string $prs_libelle): self
+    {
+        $this->prs_libelle = $prs_libelle;
 
         return $this;
     }
