@@ -29,22 +29,33 @@ class ConnexionController extends AbstractController
 
             $repo = $this->getDoctrine()->getRepository(Utilisateurs::class);
             $Utilisateurs = $repo->findAll();
+
+            $liste_noire = "/[]()~!#{};|<>=+";
+            $verifValidID = strpbrk($id, $liste_noire);
+            $verifValidMDP = strpbrk($mdp, $liste_noire);
             
             if ($form->isSubmitted() && $form->isValid())
             {
-                foreach ($Utilisateurs as $unUtilisateur)
+                if ($verifValidID === false && strlen($id) >= 4 && strlen($id) <= 15 && $verifValidMDP === false && strlen($mdp) >= 8 && strlen($mdp) <= 20)
                 {
-                    if ($unUtilisateur->getUtlIdentifiant() == $id && $unUtilisateur->getUtlMdp() == $mdp)
+                    foreach ($Utilisateurs as $unUtilisateur)
                     {
-                        $this->get('session')->set('ID', $id);
-                        $this->get('session')->set('Droit', $unUtilisateur->isDroits());
-
-                        return $this->redirectToRoute('index');
+                        if ($unUtilisateur->getUtlIdentifiant() == $id && password_verify($mdp, $unUtilisateur->getUtlMdp()) == true)
+                        {
+                            $this->get('session')->set('ID', $id);
+                            $this->get('session')->set('Droit', $unUtilisateur->isDroits());
+                        
+                            return $this->redirectToRoute('index');
+                        }
+                        else
+                        {
+                            $msgErrCo = "Erreur, l'identifiant et le mot de passe saisis sont incorrects !";
+                        }
                     }
-                    else
-                    {
-                        $msgErrCo = "Erreur, l'identifiant et le mot de passe saisis sont incorrects !";
-                    }
+                }
+                else
+                {
+                    $msgErrCo = "Erreur, les données saisie ne sont pas valides !";
                 }
             }
 

@@ -5,6 +5,7 @@ namespace App\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class ConnexionType extends AbstractType
 {
@@ -12,7 +13,7 @@ class ConnexionType extends AbstractType
     {
         $builder
             ->add('conx_identifiant')
-            ->add('conx_mdp')
+            ->add('conx_mdp',PasswordType::class)
         ;
     }
 

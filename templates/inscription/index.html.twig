@@ -14,6 +14,10 @@
 <div class="box">
     </br>
     <p class="titreInsc"> Inscrivez vous </p>
+
+    {% if msgAdmin != "" %}
+        <h5 class="msg-admin">{{ msgAdmin }}</h5>
+    {% endif %}
     
     {{ form_start(InscriptionType) }}
         <table class="table-inscription">

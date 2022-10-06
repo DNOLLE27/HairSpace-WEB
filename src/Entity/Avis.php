@@ -29,7 +29,7 @@ class Avis
 
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateurs::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $avs_utl_num;
 

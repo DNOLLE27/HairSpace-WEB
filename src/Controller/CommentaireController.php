@@ -16,7 +16,6 @@ class CommentaireController extends AbstractController
      */
     public function index(Request $request): Response
     {
-            
             $avis = new Avis();
             
             
@@ -37,6 +36,5 @@ class CommentaireController extends AbstractController
                 'ajoutAvis' => $form->createview(),
          
             ]);
-
         }
 }

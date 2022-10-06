@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 class ContactType extends AbstractType
 {
@@ -14,7 +15,7 @@ class ContactType extends AbstractType
         $builder
             ->add('ctc_nom')
             ->add('ctc_prenom')
-            ->add('ctc_email')
+            ->add('ctc_email',EmailType::class)
             ->add('ctc_message')
             ->add('ctc_numero')
         ;
