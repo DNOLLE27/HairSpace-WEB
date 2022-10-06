@@ -6,6 +6,7 @@ use App\Repository\UtilisateursRepository;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Avis;
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
@@ -38,6 +39,11 @@ class Utilisateurs implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $Droits;
+
+    public function getID(): ?int
+    {
+        return $this->id;
+    }
 
     public function getUtlIdentifiant(): ?string
     {
