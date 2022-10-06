@@ -37,7 +37,7 @@ class Utilisateurs implements UserInterface
     /**
      * @ORM\Column(type="boolean")
      */
-    private $utl_drt_id;
+    private $Droits;
 
     public function getUtlIdentifiant(): ?string
     {
@@ -86,19 +86,29 @@ class Utilisateurs implements UserInterface
 
         return $this;
     }
+
     public function eraseCredentials()
     {
+
     }
+
     public function getSalt()
     {
+
     }
+
     public function getRoles()
     {
+
     }
+
     public function getPassword()
     {
+
     }
+
     public function getUsername()
     {
+        
     }
 }

@@ -45,7 +45,7 @@
             </ul>
             <form class="d-flex">
               {% if app.session.get('ID') != "" %}
-                <a href="deconnexion" class="nav-link link-connexion">Se déconnecter ({{ app.session.get('ID') }} - {% if app.session.get('Droit') == 1 %} Admin {% else %} Utilisateur {% endif %})</a>
+                <a href="deconnexion" class="nav-link link-connexion">Se déconnecter ({{ app.session.get('ID') }} - {% if app.session.get('Droit') == 1 %}Admin{% else %}Utilisateur{% endif %})</a>
               {% else %}
                 <a href="connexion" class="nav-link link-connexion">Se connecter</a>
               {% endif %}
