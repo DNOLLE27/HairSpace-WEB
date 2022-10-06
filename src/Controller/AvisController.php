@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Avis;
 use App\Entity\Utilisateurs;
@@ -27,5 +28,10 @@ class AvisController extends AbstractController
             'avis' => $avis,
             'utilisateurs' => $utilisateurs,
         ]);
+
+        
     }
+
+
+    
 }

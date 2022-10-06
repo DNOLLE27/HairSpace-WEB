@@ -10,20 +10,21 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-    {% for unAvis in avis %}
-        {% for unUser in utilisateurs %}
+    <h1>Commentaire</h1>
             
-            {{unUser.id}}
-        </br>{{unAvis.avscommentaire}}
-          
-        {% endfor %}
+    {% for unUtilisateur in utilisateurs %}
+    {% for unAvis in avis %}
+    {% if unUtilisateur.id == unAvis.avsutlnum.id %}      
+        </br>{{unUtilisateur.utlidentifiant}}</br> 
+        {{unAvis.avscommentaire}}
+        </br>
+         
+    {% endif %}
+    {% endfor %}     
     {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/zabethr/Downloads/Documents/github/HairSpace-WEB/src/Controller/AvisController.php'|file_link(0) }}">src/Controller/AvisController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/zabethr/Downloads/Documents/github/HairSpace-WEB/templates/avis/index.html.twig'|file_link(0) }}">templates/avis/index.html.twig</a></code></li>
-    </ul>
+    <a class="inscriptionLien" href="commentaire" class="btn">Ecrire un commentaire</a>
 </div>
+
+
 {% endblock %}
