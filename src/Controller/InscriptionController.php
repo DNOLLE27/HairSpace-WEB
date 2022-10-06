@@ -4,18 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Utilisateurs;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Forms;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\FormView;
 use App\Form\InscriptionType;
 
 class InscriptionController extends AbstractController
@@ -57,36 +49,6 @@ class InscriptionController extends AbstractController
             'msgErreur' => $msg_err
         ]);
     }
-
-    /**
-     * @Route("/inscription/new", name="inscription_create")
-     */
-    public function create(Request $request): Response
-    {
-        
-            $user = new Utilisateurs();
-            
-            $form = $this->createFormBuilder($user)
-                         ->add('id')
-                         ->add('utl_identifiant')
-                         ->add('utl_email')
-                         ->add('utl_mdp')
-                         ->getForm();
-                         
-            $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            $user = $form->getData();
-            return $this->redirectToRoute('task_success');
-        }
-                         
-            return $this->render('inscription/index.html.twig', [
-                'for' => $form->createview(),
-         
-            ]);
-
-        }
-
 
         
     }

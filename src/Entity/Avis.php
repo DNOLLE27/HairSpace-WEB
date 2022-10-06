@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use App\Entity\Utilisateurs;
 use App\Repository\AvisRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -33,7 +33,7 @@ class Avis
      */
     private $avs_utl_num;
 
-    public function getId(): ?int
+    public function getID(): ?int
     {
         return $this->id;
     }
