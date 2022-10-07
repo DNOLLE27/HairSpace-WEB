@@ -17,38 +17,43 @@ class InscriptionController extends AbstractController
      */
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $msg_err = "";
-
-        $utilisateur = new Utilisateurs();
-        $form = $this->createForm(InscriptionType::class,$utilisateur );
-        $form->handleRequest($request);
-
-        $mdp =  $form->get('utl_mdp')->getData();
-        $mdpVerif =  $form->get('utl_mdp_verif')->getData();
-
-        if ($form->isSubmitted() && $form->isValid())
+        if ($this->get('session')->get('ID') == "" && $this->get('session')->get('Droit') == "")
         {
-            if ($mdp == $mdpVerif)
-            {
-                $utilisateur->setDroits(0);
-                $entityManager->persist($utilisateur);
-                $entityManager->flush();
+            $msg_err = "";
 
-                $this->addFlash('success', 'Compte créé, veuillez-vous connecter !');
-                return $this->redirectToRoute('app_connexion');
-            }
-            else
+            $utilisateur = new Utilisateurs();
+            $form = $this->createForm(InscriptionType::class,$utilisateur );
+            $form->handleRequest($request);
+
+            $mdp =  $form->get('utl_mdp')->getData();
+            $mdpVerif =  $form->get('utl_mdp_verif')->getData();
+
+            if ($form->isSubmitted() && $form->isValid())
             {
-                $msg_err = "Erreur, les mots de passes saisis ne correspondent pas !";
+                if ($mdp == $mdpVerif)
+                {
+                    $utilisateur->setDroits(0);
+                    $entityManager->persist($utilisateur);
+                    $entityManager->flush();
+
+                    $this->addFlash('success', 'Compte créé, veuillez-vous connecter !');
+                    return $this->redirectToRoute('app_connexion');
+                }
+                else
+                {
+                    $msg_err = "Erreur, les mots de passes saisis ne correspondent pas !";
+                }
             }
+
+            return $this->render('inscription/index.html.twig', [
+                'controller_name' => 'InscriptionController',
+                'InscriptionType' => $form->createView(),
+                'msgErreur' => $msg_err
+            ]);
         }
-
-        return $this->render('inscription/index.html.twig', [
-            'controller_name' => 'InscriptionController',
-            'InscriptionType' => $form->createView(),
-            'msgErreur' => $msg_err
-        ]);
+        else
+        {
+            return $this->redirectToRoute('index');
+        }
     }
-
-        
-    }
+}
