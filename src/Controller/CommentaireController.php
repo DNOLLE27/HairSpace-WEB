@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Avis;
 use App\Entity\Utilisateurs;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class CommentaireController extends AbstractController
 {
@@ -18,6 +19,7 @@ class CommentaireController extends AbstractController
     {
             
             $avis = new Avis();
+            $aff = new \DateTime('now');
             
             
             $form = $this->createFormBuilder($avis)
@@ -27,9 +29,19 @@ class CommentaireController extends AbstractController
             $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid())
         {
+            $user = new Utilisateurs();
+            $user = $this->getDoctrine()->getRepository(Utilisateurs::class)->find($this->get('session')->get('id'));
+
+
             $avis = $form->getData();
-            $avis->setAvsDate(new \DateTime());
-            $avis->setAvsUtlNum(new Utilisateurs());
+            $avis->setAvsDate($aff);
+            $avis->setAvsUtlNum($user);
+            $avis->setAvsPrenom("Roberto");
+            $avis->setAvsNom("JENAIMARRE");
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($avis);
+            $entityManager->flush();
             return $this->redirectToRoute('app_avis');
         }
                          

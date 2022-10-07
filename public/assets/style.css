@@ -440,3 +440,120 @@ a
     color: rgb(0, 255, 0);
     text-shadow: 1px 1px 2px rgb(0, 100, 0);;
 }
+
+.avisForme{
+    position:fixed;
+    top: 60%;
+    left:83%;
+
+}
+
+.btnAvis{
+    position:fixed;
+    top: 67%;
+    left: 85%;
+}
+
+.boxAvis {
+    position: fixed;
+    width: 25%;
+    height: 20%;
+    top: 55%;
+    left:80%;
+    background: #C497EB;
+    box-shadow: 0em 0em 2em grey;
+    border-radius:20px;
+    border: 3px solid black;
+  }
+
+
+  .boxListCom {
+    position: block;
+    width: auto;
+    padding: 1%;
+    height: 20%;
+
+    background: #C497EB;
+    box-shadow: 0em 0em 2em grey;
+    border-radius:20px;
+    border: 3px solid black;
+  }
+
+
+.boxCommentaire{
+
+    position: fixed;
+    width: 35%;
+    height: 60%;
+    margin-bottom: 5%;
+    margin-top: 4%;
+    margin-right: 10%;
+    margin-left: 9%;
+    background-color: #FEE9FF;
+    box-shadow: 0em 0em 2em grey;
+    border-radius:20px;
+    border: 3px solid black;
+}
+
+.leNom{
+    text-align: center;
+    padding-top: 5%;
+}
+
+.boxCommentaire textarea
+{
+    background-color: #DBAAE3;
+    position: fixed;
+    top: 48%;
+    left:44%;
+    
+    
+}
+
+button
+{
+    display: block;
+    margin-left: 1%;
+    margin-right: 50%;
+    margin-top: 5%;
+    
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+}
+
+button:hover 
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+button:focus 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+button:focus:hover
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+button:focus:active 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}

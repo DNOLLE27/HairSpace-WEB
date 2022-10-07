@@ -5,15 +5,23 @@
 {% block body %}
 
 <div class="example-wrapper align">
-    <h1> {{ nomSalon }} </h1>
+    <h1> HairSpace </h1>
 </div>
 
 <table>
         <tr>
-            <td><p class="textPresentation">Notre salon de coiffure {{ nomSalon }} se trouve dans {{ adresse }}. Nous sommes ouvert tout les jours de 8h à 20h.
+        {% for unePresentation in presentations %}
+            <td><p class="textPresentation">Notre salon de coiffure  se trouve dans . Nous sommes ouvert tout les jours de 8h à 20h.
             Vous pouvez réserver par téléphone, mais ceci n'est pas obligatoire. </p>
             <p class="textPresentation"> Nous coupons cheveux et barbes. Pour en savoir plus sur nos services, cliquer <a class="lienColor" href="prestation">ici</a>.</p></td>
-            <td><img class="imgPresentation" src="assets/img/presentation.jpg"></td>
+            <td><img class="imgPresentation" src="unePresentation.pst_image"></td>
+
+            {{ form_start(modifPres) }}
+            {{ form_widget(modifPres.pst_text) }}
+            {{ form_widget(modifPres.pst_image) }}</div>
+            <button type="submit" class="btnConnect">Modifier</button></td>
+            {{ form_end(modifPres) }}
+        {% endfor %}
         </tr>
 </table>
 

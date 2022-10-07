@@ -38,6 +38,7 @@ class ConnexionController extends AbstractController
                     {
                         $this->get('session')->set('ID', $id);
                         $this->get('session')->set('Droit', $unUtilisateur->isDroits());
+                        $this->get('session')->set('id', $unUtilisateur->getId());
 
                         return $this->redirectToRoute('index');
                     }

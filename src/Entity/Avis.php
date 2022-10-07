@@ -23,15 +23,26 @@ class Avis
     private $avs_commentaire;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $avs_date;
 
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateurs::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $avs_utl_num;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $avs_prenom;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $avs_nom;
+
 
     public function getID(): ?int
     {
@@ -55,7 +66,7 @@ class Avis
         return $this->avs_date;
     }
 
-    public function setAvsDate(\DateTimeInterface $avs_date): self
+    public function setAvsDate(\DateTime $avs_date): self
     {
         $this->avs_date = $avs_date;
 
@@ -73,5 +84,30 @@ class Avis
 
         return $this;
     }
+
+    public function getAvsPrenom(): ?string
+    {
+        return $this->avs_prenom;
+    }
+
+    public function setAvsPrenom(?string $avs_prenom): self
+    {
+        $this->avs_prenom = $avs_prenom;
+
+        return $this;
+    }
+
+    public function getAvsNom(): ?string
+    {
+        return $this->avs_nom;
+    }
+
+    public function setAvsNom(?string $avs_nom): self
+    {
+        $this->avs_nom = $avs_nom;
+
+        return $this;
+    }
+
 
 }

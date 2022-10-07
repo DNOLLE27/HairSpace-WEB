@@ -15,16 +15,29 @@
     {% for unUtilisateur in utilisateurs %}
     {% for unAvis in avis %}
     {% if unUtilisateur.id == unAvis.avsutlnum.id %}      
-        </br>{{unUtilisateur.utlidentifiant}}</br> 
-        {{unAvis.avscommentaire}}
+        </br><div class="boxListCom">{{unUtilisateur.utlidentifiant}} : </br> </br> 
+        {{unAvis.avscommentaire}}</div>
         </br>
          
     {% endif %}
     {% endfor %}     
     {% endfor %}
-
-    <a class="inscriptionLien" href="commentaire" class="btn">Ecrire un commentaire</a>
+    <div class="boxAvis">
+    <div class="avisForme">
+    
+    {% if app.session.get('Droit') == 1 %}
+    {{ app.session.get('ID') }}   
+    {% else %}
+    {% if app.session.get('Droit') == 0 %}
+    {{ app.session.get('ID') }}
+    {% else %}Nom Prenom
+    {% endif %}
+    {% endif %} :
+    
+    <a class="inscriptionLien btnAvis" href="commentaire" >Ecrire un commentaire</a></div>
 </div>
+</div>
+
 
 
 {% endblock %}
