@@ -23,9 +23,9 @@ class Presentation
     private $pst_image;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $pst_adresse;
+    private $pst_text;
 
     public function getId(): ?int
     {
@@ -44,14 +44,14 @@ class Presentation
         return $this;
     }
 
-    public function getPstAdresse(): ?string
+    public function getPstText(): ?string
     {
-        return $this->pst_adresse;
+        return $this->pst_text;
     }
 
-    public function setPstAdresse(string $pst_adresse): self
+    public function setPstText(string $pst_text): self
     {
-        $this->pst_adresse = $pst_adresse;
+        $this->pst_text = $pst_text;
 
         return $this;
     }

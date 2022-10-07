@@ -5,6 +5,9 @@
 {% block body %}
 
 <div class="body-contenu">
+    {% for message in app.flashes('success') %}
+        <div class="presta-ajoute"><p>{{ message }}</p></div>
+    {% endfor %}
     <div class="prestation-grid">
         {% for unePrestation in Prestations %}
         <div class="prestation-grid-colonne">
@@ -34,6 +37,40 @@
             </table>
         </div>
         {% endfor %}
+
+        <div class="prestation-grid-colonne ajout-prestation-colonne">
+            <table>
+                {% if PrestationType is defined %}
+                    {{ form_start(PrestationType) }}
+                        <tr>
+                            <th>Lien d'image :</th>
+                            <td>{{ form_widget(PrestationType.prs_image) }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix :</th>
+                            <td>{{ form_widget(PrestationType.prs_prix) }}</td>
+                        </tr>
+                        <tr>
+                            <th>Durée :</th>
+                            <td>{{ form_widget(PrestationType.prs_duree) }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom prestation :</th>
+                            <td>{{ form_widget(PrestationType.prs_libelle) }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit">Envoyer</button></td>
+                        </tr>
+                        {{ form_rest(PrestationType) }}
+                    {{ form_end(PrestationType) }}
+                {% else %}
+                    <tr>
+                        <td><a class="ajouter-prestation" href="/ajout-prestation"><img src="/assets/img/plus.png"> </br> Ajouter une nouvelle prestation</a></td>
+                    </tr>
+                {% endif %}
+            </table>
+        </div>
+
     </div>
 </div>
 

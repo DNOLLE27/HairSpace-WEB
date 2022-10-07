@@ -237,8 +237,11 @@ a
 
 .prestation-grid
 {
+    width: 90%;
     margin-top: 30px;
     margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
 }
@@ -439,4 +442,123 @@ a
     text-align: center;
     color: rgb(0, 255, 0);
     text-shadow: 1px 1px 2px rgb(0, 100, 0);;
+}
+
+.ajouter-prestation
+{
+    text-align: center;
+    color: #BD62CD !important;
+    text-shadow: 1px 1px 2px #70367a;
+}
+
+.ajouter-prestation img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 50px;
+}
+
+.ajout-prestation-colonne
+{
+    border: #BD62CD 2px solid;
+    border-radius: 20px;
+}
+
+.ajout-prestation-colonne table
+{
+    border-collapse: separate;
+    border-spacing: 2px 5px;
+    margin-bottom: 120px;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ajout-prestation-colonne th
+{
+    text-shadow: 1px 1px 2px rgb(15, 15, 15);
+    text-align: right;
+}
+
+.ajout-prestation-colonne button
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+}
+
+.ajout-prestation-colonne button:hover 
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.ajout-prestation-colonne button:focus 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.ajout-prestation-colonne button:focus:hover
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.ajout-prestation-colonne button:focus:active 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+#prestation_prs_image
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#prestation_prs_prix
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#prestation_prs_libelle
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#prestation_prs_duree_hour, #prestation_prs_duree_minute
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#prestation_prs_duree
+{
+    text-shadow: 1px 1px 2px rgb(15, 15, 15) !important;
 }

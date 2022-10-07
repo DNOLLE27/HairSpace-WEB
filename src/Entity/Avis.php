@@ -33,6 +33,17 @@ class Avis
      */
     private $avs_utl_num;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $avs_prenom;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $avs_nom;
+    
+
     public function getID(): ?int
     {
         return $this->id;
@@ -74,4 +85,27 @@ class Avis
         return $this;
     }
 
+    public function getAvsPrenom(): ?string
+    {
+        return $this->avs_prenom;
+    }
+
+    public function setAvsPrenom(?string $avs_prenom): self
+    {
+        $this->avs_prenom = $avs_prenom;
+
+        return $this;
+    }
+
+    public function getAvsNom(): ?string
+    {
+        return $this->avs_nom;
+    }
+
+    public function setAvsNom(?string $avs_nom): self
+    {
+        $this->avs_nom = $avs_nom;
+
+        return $this;
+    }
 }
