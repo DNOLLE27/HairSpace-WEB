@@ -238,6 +238,7 @@ a
 .prestation-grid
 {
     width: 90%;
+    grid-gap: 10px;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: auto;
