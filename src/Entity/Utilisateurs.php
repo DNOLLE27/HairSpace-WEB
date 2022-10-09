@@ -40,7 +40,7 @@ class Utilisateurs implements UserInterface
      */
     private $Droits;
 
-    public function getID(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
