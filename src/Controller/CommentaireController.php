@@ -18,7 +18,7 @@ class CommentaireController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        if ($this->get('session')->get('Droit') != "")
+        if ($this->get('session')->get('ID') != "")
         {
             $avis = new Avis();
             date_default_timezone_set('Europe/Paris');
