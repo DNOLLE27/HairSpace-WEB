@@ -23,7 +23,7 @@ class Presentation
     private $pst_image;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $pst_text;
 

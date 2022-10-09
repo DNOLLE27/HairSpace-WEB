@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\component\form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class InscriptionType extends AbstractType
 {
@@ -14,9 +16,9 @@ class InscriptionType extends AbstractType
     {
         $builder
             ->add('utl_identifiant')
-            ->add('utl_email')
-            ->add('utl_mdp')
-            ->add('utl_mdp_verif',TextType::class, ['mapped'=> false])
+            ->add('utl_email',EmailType::class)
+            ->add('utl_mdp',PasswordType::class)
+            ->add('utl_mdp_verif',PasswordType::class, ['mapped'=> false])
         ;
     }
 

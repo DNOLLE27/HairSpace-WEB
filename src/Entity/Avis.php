@@ -32,6 +32,7 @@ class Avis
      * @ORM\JoinColumn(nullable=true)
      */
     private $avs_utl_num;
+    
 
 
     public function getID(): ?int
@@ -74,8 +75,4 @@ class Avis
 
         return $this;
     }
-
-
-
-
 }

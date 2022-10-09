@@ -50,7 +50,6 @@ class CommentaireController extends AbstractController
                 'ajoutAvis' => $form->createview(),
          
             ]);
-
         }
         else{
             return $this->redirectToRoute('app_connexion');
