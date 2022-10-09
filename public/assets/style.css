@@ -562,3 +562,123 @@ a
 {
     text-shadow: 1px 1px 2px rgb(15, 15, 15) !important;
 }
+
+.presta-ajoute p
+{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(0, 255, 0);
+    text-shadow: 1px 1px 2px rgb(0, 100, 0);;
+}
+
+.ajouter-prestation
+{
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.presta-erreur p
+{
+    margin-top: 10px;
+    color: rgb(255, 0, 0);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(100, 0, 0);
+}
+
+#prestation_modif_prs_image
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#prestation_modif_prs_prix
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#prestation_modif_prs_libelle
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#prestation_modif_prs_duree_hour, #prestation_modif_prs_duree_minute
+{
+    color: rgb(0, 0, 0);
+    border: #BD62CD 2px solid;
+    background-color: #F8CAFF;
+}
+
+#prestation_modif_prs_duree
+{
+    text-shadow: 1px 1px 2px rgb(15, 15, 15) !important;
+}
+
+.button-suppr, .button-modif
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+}
+
+.button-suppr:hover, .button-modif:hover 
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.button-suppr:focus, .button-modif:focus 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.button-suppr:focus:hover, .button-modif:focus:hover
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.button-suppr:focus:active, .button-modif:focus:active 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.supprmodif-table
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-suppr
+{
+    margin-left: 30px;
+}
+
+.button-modif
+{
+    margin-right: 30px;
+}
