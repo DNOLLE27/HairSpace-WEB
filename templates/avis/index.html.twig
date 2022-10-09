@@ -18,11 +18,11 @@
             
     {% for unUtilisateur in utilisateurs %}
     {% for unAvis in avis %}
-    {% if app.session.get('Droit') == 1 %}
+    
+    {% if unUtilisateur.id == unAvis.avsutlnum.id %}   {% if app.session.get('Droit') == 1 %}
         <form method="POST" action="suppr-avis"><button type="submit" class="button-AvisP">Supprimer</button><input type="hidden" id="idAvisSuppr" name="idAvisSuppr" value="{{unAvis.id}}"></form>
-        {% endif %}
-    {% if unUtilisateur.id == unAvis.avsutlnum.id %}      
-        </br><div class="boxListCom">{{unUtilisateur.utlidentifiant}} écrit à {{unAvis.avsdate|date('Y-m-d H:i') }} : </br> </br> 
+        {% endif %}   
+        </br><div class="boxListCom">{{unUtilisateur.utlidentifiant}} a écrit à {{unAvis.avsdate|date('Y-m-d H:i') }} : </br> </br> 
         {{unAvis.avscommentaire}}</div> 
         
         </br>
