@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Contact{% endblock %}
+
+{% block body %}
+
+<div class="form-body">
+    <h3>Moyens de contact :</h3>
+    
+    <h4>- <u>Numéro :</u> <a href="tel:+33232866523">+33232866523</a></h4>
+    <h4>- <u>Adresse E-Mail :</u> <a href="mailto:contact@spacehair.fr">contact@spacehair.fr</a></h4>
+
+    <h3>Formulaire de contact :</h3>
+
+    {% for message in app.flashes('success') %}
+        <div class="message-envoye"><p>{{ message }}</p></div>
+    {% endfor %}
+
+    {{ form_start(ContactType) }}
+        <table class="contact-table">
+            <tr>
+                <th>Nom :</th>
+                <td>{{ form_widget(ContactType.ctc_nom) }}</td>
+                <th>Prénom :</th>
+                <td>{{ form_widget(ContactType.ctc_prenom) }}</td>
+            </tr>
+            <tr>
+                <th colspan="1">E-Mail :</th>
+                <td colspan="3">{{ form_widget(ContactType.ctc_email) }}</td>
+            </tr>
+            <tr>
+                <th colspan="1">Numéro :</th>
+                <td colspan="3">{{ form_widget(ContactType.ctc_numero) }}</td>
+            </tr>
+            <tr>
+                <th class="txt-msg" colspan="4"><div class="txt-msg-spacetop">Message :</div></th>
+            </tr>
+            <tr>
+                <td colspan="4">{{ form_widget(ContactType.ctc_message) }}</td>
+            </tr>
+            <tr>
+                <td colspan="4"><button type="submit">Envoyer</button></td>
+            </tr>
+        </table>
+
+        {{ form_rest(ContactType) }}
+    {{ form_end(ContactType) }}
+</div>
+
+{% endblock %}

@@ -1,0 +1,126 @@
+body
+{
+    background: none !important;
+    background-color: #907094 !important;
+}
+
+.box
+{
+    background-color: #FEE9FF;
+}
+
+.box input
+{
+    background-color: #DBAAE3;
+}
+
+::placeholder
+{
+    color: #1D413F;
+}
+
+.connexionLien, .inscriptionLien
+{
+    color: #2E49C0 !important;
+}
+
+input
+{
+    color: #1D413F !important;
+}
+
+.table-inscription, .table-connexion
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-connexion
+{
+    margin-top: 100px;
+}
+
+button
+{
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+}
+
+button:hover 
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+button:focus 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+button:focus:hover
+{
+    color: #E290EC;
+    background-color: #9F0A88;
+    border: #E290EC 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+button:focus:active 
+{
+    color: #9F0A88;
+    background-color: #E290EC;
+    border: #9F0A88 2px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+.msg-erreur
+{
+    color: rgb(255, 0, 0);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(100, 0, 0);
+}
+
+.msg-erreurCo
+{
+    color: rgb(255, 0, 0);
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(100, 0, 0);
+    margin-top: 20px;
+}
+
+.message-envoye
+{
+    margin-top: 30px;
+}
+
+.msg-admin
+{
+    margin-top: -40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(0, 0, 255);
+    text-shadow: 1px 1px 2px rgb(0, 0, 100);
+}

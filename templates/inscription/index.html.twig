@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Inscription{% endblock %}
+
+{% block body %}
+
+<link href="../assets/style-inscrico.css" rel="stylesheet"/>
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="box">
+    </br>
+    <p class="titreInsc"> Inscrivez vous </p>
+
+    {% if msgAdmin != "" %}
+        <h5 class="msg-admin">{{ msgAdmin }}</h5>
+    {% endif %}
+    
+    {{ form_start(InscriptionType) }}
+        <table class="table-inscription">
+            <tr>
+                <th>Identifiant :</th>
+            </tr>
+            <tr>
+                <td>{{ form_widget(InscriptionType.utl_identifiant) }}</td>
+            </tr>
+             <tr>
+                <th>Adresse E-Mail :</th>
+            </tr>
+            <tr>
+                <td>{{ form_widget(InscriptionType.utl_email) }}</td>
+            </tr>
+            <tr>
+                <th>Mot de passe :</th>
+            </tr>
+            <tr>
+                <td>{{ form_widget(InscriptionType.utl_mdp) }}</td>
+            </tr>
+            <tr>
+                <th>Confirmer mot de passe :</th>
+            </tr>
+            <tr>
+                <td>{{ form_widget(InscriptionType.utl_mdp_verif) }}</td>
+            </tr>
+            <tr>
+                <td><button type="submit">S'inscrire</button></td>
+            </tr>
+        </table>
+        {{ form_rest(InscriptionType) }}
+    {{ form_end(InscriptionType) }} 
+    
+    {% if msgErreur != "" %}
+        <p class="msg-erreur">{{ msgErreur }}</p>
+    {% endif %}
+
+    <a class="connexionLien" href="connexion" class="btn">Connectez vous !</a>
+</div>
+
+{% endblock %}

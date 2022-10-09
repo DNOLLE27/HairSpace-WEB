@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Prestations{% endblock %}
+
+{% block body %}
+
+<div class="body-contenu">
+    {% for message in app.flashes('success') %}
+        <div class="presta-ajoute"><p>{{ message }}</p></div>
+    {% endfor %}
+
+    {% if (MSGErrPresta is defined) and (MSGErrPresta != "") %}
+        <div class="presta-erreur"><p>{{ MSGErrPresta }}</p></div>
+    {% endif %}
+
+    {% if (MSGErrPrestaModif is defined) and (MSGErrPrestaModif != "") %}
+        <div class="presta-erreur"><p>{{ MSGErrPrestaModif }}</p></div>
+    {% endif %}
+
+    <div class="prestation-grid">
+        {% for unePrestation in Prestations %}
+            
+        {% if idModifPresta is defined and idModifPresta == unePrestation.id %}
+            <div class="prestation-grid-colonne ajout-prestation-colonne">
+                <table>
+                    {{ form_start(PrestationTypeModif) }}
+                        <tr>
+                            <th>Lien d'image :</th>
+                            <td>{{ form_widget(PrestationTypeModif.prs_image) }}</td>
+                        </tr>
+                        <tr>
+                            <th>Prix :</th>
+                            <td>{{ form_widget(PrestationTypeModif.prs_prix) }}</td>
+                        </tr>
+                        <tr>
+                            <th>Durée :</th>
+                            <td>{{ form_widget(PrestationTypeModif.prs_duree) }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom prestation :</th>
+                            <td>{{ form_widget(PrestationTypeModif.prs_libelle) }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button type="submit">Modifier</button></td>
+                        </tr>
+                        {{ form_rest(PrestationTypeModif) }}
+                    {{ form_end(PrestationTypeModif) }}
+                     <tr>
+                        <td colspan="2"><form method="POST" action="prestation"><button type="submit">Annuler</button></form></td>
+                    </tr>
+                </table>
+            </div>
+        {% else %}
+        <div class="prestation-grid-colonne">
+            <table>
+                <tr>
+                    <td><img class="prestation-img" src="{{ unePrestation.prsimage }}"></td>
+                </tr>
+                <tr>
+                    <td><h2>{{ unePrestation.prslibelle }}</h2></td>
+                </tr>
+                <tr>
+                    <td><div class="conteneur-prix"><p>{{ unePrestation.prsprix }} €</p></div></td>
+                </tr>
+                <tr>
+                    <td><div class="conteneur-duree"><p>
+
+                    {% if unePrestation.prsduree|date('H') != '00' %}
+                    {{ unePrestation.prsduree|date('H') }} H
+                    {% endif %}
+
+                    {% if unePrestation.prsduree|date('i') != '00' %}
+                    {{ unePrestation.prsduree|date('i') }} Mins
+                    {% endif %}
+
+                    </p></div></td>
+                </tr>
+                
+                {% if app.session.get('Droit') == 1 %}
+                <tr>
+                    <td>
+                        <table class="supprmodif-table">
+                            <tr>
+                                <td><form method="POST" action="modif-prestation"><button type="submit" class="button-modif">Modifier</button><input type="hidden" id="idPrestaModif" name="idPrestaModif" value="{{unePrestation.id}}"></form></td>
+                                <td><form method="POST" action="suppr-prestation"><button type="submit" class="button-suppr">Supprimer</button><input type="hidden" id="idPrestaSuppr" name="idPrestaSuppr" value="{{unePrestation.id}}"></form></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+        {% endif %}
+
+        {% endfor %}
+
+
+        {% if app.session.get('Droit') == 1 %}
+            <div class="prestation-grid-colonne ajout-prestation-colonne">
+                <table>
+                    {% if PrestationType is defined %}
+                        {{ form_start(PrestationType) }}
+                            <tr>
+                                <th>Lien d'image :</th>
+                                <td>{{ form_widget(PrestationType.prs_image) }}</td>
+                            </tr>
+                            <tr>
+                                <th>Prix :</th>
+                                <td>{{ form_widget(PrestationType.prs_prix) }}</td>
+                            </tr>
+                            <tr>
+                                <th>Durée :</th>
+                                <td>{{ form_widget(PrestationType.prs_duree) }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nom prestation :</th>
+                                <td>{{ form_widget(PrestationType.prs_libelle) }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><button type="submit">Ajouter</button></td>
+                            </tr>
+                            {{ form_rest(PrestationType) }}
+                        {{ form_end(PrestationType) }}
+                        <tr>
+                            <td colspan="2"><form method="POST" action="prestation"><button type="submit">Annuler</button></form></td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td><a class="ajouter-prestation" href="/ajout-prestation"><img src="/assets/img/plus.png"> </br> Ajouter une nouvelle prestation</a></td>
+                        </tr>
+                    {% endif %}
+                </table>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
