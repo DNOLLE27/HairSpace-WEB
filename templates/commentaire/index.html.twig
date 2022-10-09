@@ -19,8 +19,8 @@
                 {{ form_end(ajoutAvis) }}
                 <a class="inscriptionLien btnAvisC" href="avis" >Retour</a></div>   
             {% else %}
-                {% if app.session.get('Droit') == 0 %} :
-                    {{ app.session.get('ID') }}
+                {% if app.session.get('Droit') == 0 %}
+                    {{ app.session.get('ID') }} :
                     {{ form_start(ajoutAvis) }}
                     {{ form_widget(ajoutAvis.avs_commentaire) }}</div>
                     <button type="submit" class="btnConnect">Ajouter un commentaire</button></td>
