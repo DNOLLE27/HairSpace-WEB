@@ -33,20 +33,12 @@
     <div class="boxAvis">
     <div class="avisForme">
     
-    {% if app.session.get('Droit') == 1 %}
-    {{ app.session.get('ID') }} :  
-    <a class="inscriptionLien btnAvis" href="commentaire" >Ecrire un commentaire</a></div>
+    {% if app.session.get('ID') != "" %}
+        {{ app.session.get('ID') }} :  
+        <a class="inscriptionLien btnAvis" href="commentaire" >Ecrire un commentaire</a></div>
     {% else %}
-    {% if app.session.get('Droit') == 0 %}
-    {{ app.session.get('ID') }} :
-    <a class="inscriptionLien btnAvis" href="commentaire" >Ecrire un commentaire</a></div>
-    {% else %}
-    <a class="inscriptionLien btnAvis" href="connexion" >Ecrire un commentaire</a></div>
+        <a class="inscriptionLien btnAvis" href="connexion" >Ecrire un commentaire</a></div>
     {% endif %}
-    {% endif %} 
-
-    
-    
     
 </div>
 </div>
