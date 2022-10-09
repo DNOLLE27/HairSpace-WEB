@@ -18,8 +18,10 @@ class CommentaireController extends AbstractController
      */
     public function index(Request $request): Response
     {
-            
+        if ($this->get('session')->get('Droit') != "")
+        {
             $avis = new Avis();
+            date_default_timezone_set('Europe/Paris');
             $aff = new \DateTime('now');
             
             
@@ -37,8 +39,6 @@ class CommentaireController extends AbstractController
             $avis = $form->getData();
             $avis->setAvsDate($aff);
             $avis->setAvsUtlNum($user);
-            $avis->setAvsPrenom("Roberto");
-            $avis->setAvsNom("JENAIMARRE");
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($avis);
@@ -52,4 +52,10 @@ class CommentaireController extends AbstractController
             ]);
 
         }
+        else{
+            return $this->redirectToRoute('app_connexion');
+        }
+
+    }
+           
 }
