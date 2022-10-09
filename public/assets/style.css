@@ -5,6 +5,7 @@ body
     background-image: linear-gradient(#C497EB, #93629F);
     color: black;
     text-shadow: 1px 1px 2px rgb(15, 15, 15);
+    
 }
 
 h1, h3
@@ -154,7 +155,9 @@ h1, h3
 .imgPresentation{
     width: 80%;
     margin-top: 10%;
-    border-radius: 30px;
+    border-radius: 20%;
+    border: 6px solid #f08fe3;
+   
 }
 
 .lienColor{
@@ -454,6 +457,18 @@ a
     left: 85%;
 }
 
+.btnAvisC{
+    position:fixed;
+    top: 78%;
+    left: 49.5%;
+}
+
+.btnS{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+}
+
 .boxAvis {
     position: fixed;
     width: 25%;
@@ -488,7 +503,7 @@ a
     margin-bottom: 5%;
     margin-top: 4%;
     margin-right: 10%;
-    margin-left: 9%;
+    margin-left: 5%;
     background-color: #FEE9FF;
     box-shadow: 0em 0em 2em grey;
     border-radius:20px;
@@ -504,8 +519,8 @@ a
 {
     background-color: #DBAAE3;
     position: fixed;
-    top: 48%;
-    left:44%;
+    top: 37%;
+    left:43%;
     
     
 }
@@ -513,7 +528,7 @@ a
 button
 {
     display: block;
-    margin-left: 1%;
+    margin-left: 2%;
     margin-right: 50%;
     margin-top: 5%;
     
@@ -556,4 +571,36 @@ button:focus:active
     border: #9F0A88 2px solid;
     outline: none;
     box-shadow: none;
+}
+
+
+.pst_text{
+    background-color: #DBAAE3;
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 4%;
+   
+
+}
+
+.pst_image{
+    background-color: #DBAAE3;
+    position: absolute;
+    margin-left: 65%;
+    margin-top: 4%;
+    
+
+}
+
+.btnModif{
+    position: absolute;
+    margin-left: 45%;
+    top:90%;
+}
+
+.rowE{
+    display: grid;;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    margin-top: 10%;
 }
