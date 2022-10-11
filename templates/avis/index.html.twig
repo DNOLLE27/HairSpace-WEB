@@ -4,13 +4,10 @@
 
 {% block body %}
 
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+
 
 <div class="example-wrapper">
-    <h1>Commentaire</h1>
+    <h1 class="commentaire">Commentaire</h1>
 
     {% for message in app.flashes('success') %}
         <div class="message-envoye"><p>{{ message }}</p></div>
@@ -22,7 +19,7 @@
     {% if unUtilisateur.id == unAvis.avsutlnum.id %}   {% if app.session.get('Droit') == 1 %}
         <form method="POST" action="suppr-avis"><button type="submit" class="button-AvisP">Supprimer</button><input type="hidden" id="idAvisSuppr" name="idAvisSuppr" value="{{unAvis.id}}"></form>
         {% endif %}   
-        </br><div class="boxListCom">{{unUtilisateur.utlidentifiant}} a écrit à {{unAvis.avsdate|date('Y-m-d H:i') }} : </br> </br> 
+        </br><div class="boxListCom">{{unUtilisateur.utlidentifiant}}{% if app.session.get('Droit') == 1 %} (Admin){% endif %}  a écrit à {{unAvis.avsdate|date('Y-m-d H:i') }} : </br> </br> 
         {{unAvis.avscommentaire}}</div> 
         
         </br>
