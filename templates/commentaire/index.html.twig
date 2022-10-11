@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Avis{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+<div class="example-wrapper">
+    <h1 class="commentaire">Commentaire</h1>
+    <div class="boxCommentaire">
+           <div class="leNom"> 
+            {% if app.session.get('Droit') == 1 %}
+                {{ app.session.get('ID') }} :
+                {{ form_start(ajoutAvis) }}
+                {{ form_widget(ajoutAvis.avs_commentaire) }}</div>
+                <button type="submit" class="btnConnect">Ajouter un commentaire</button></td>
+                {{ form_end(ajoutAvis) }}
+                <a class="inscriptionLien btnAvisC" href="avis" >Retour</a></div>   
+            {% else %}
+                {% if app.session.get('Droit') == 0 %}
+                    {{ app.session.get('ID') }} :
+                    {{ form_start(ajoutAvis) }}
+                    {{ form_widget(ajoutAvis.avs_commentaire) }}</div>
+                    <button type="submit" class="btnConnect">Ajouter un commentaire</button></td>
+                    {{ form_end(ajoutAvis) }}
+                    <a class="inscriptionLien btnAvisC" href="avis" >Retour</a></div>
+                {% else %}
+                <a class="inscriptionLien btnS" href="avis">Retour</a></div>
+            {% endif %}
+            {% endif %} 
+            </div>
+     
+    </div>
+
+</div>
+
+
+{% endblock %}

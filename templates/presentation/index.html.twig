@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Présentation{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper align">
+    <h1> HairSpace </h1>
+</div>
+
+    
+    {% for unePresentation in presentations %}
+    <div class="rowE pt-5" style="align-items: center">
+        <div class="col">
+            <p class="textPresentation">{{ unePresentation.psttext }}</p>
+            <p class="textPresentation"> Nous coupons cheveux et barbes. Pour en savoir plus sur nos services, cliquer <a class="lienColor" href="prestation">ici</a>.</p>
+        </div>
+        <div class="col">
+            <img class="imgPresentation" src="assets/img/{{ unePresentation.pstimage}}">
+        </div>
+        {% if app.session.get('Droit') == 1 %}
+
+        {{ form_start(modifPres) }}
+        {{ form_widget(modifPres.pst_text) }} 
+        {{ form_widget(modifPres.pst_image) }}</div>
+        <button type="submit" class="btnModif">Modifier</button></td>
+        {{ form_end(modifPres) }}
+        {% endif %}
+    {% endfor %}
+    </tr>
+
+
+{% endblock %}
