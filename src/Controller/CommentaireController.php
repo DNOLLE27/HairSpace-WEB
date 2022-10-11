@@ -26,7 +26,7 @@ class CommentaireController extends AbstractController
             
             
             $form = $this->createFormBuilder($avis)
-                         ->add('avs_commentaire', TextareaType::class, ['attr' => ['rows' => 7,'cols' => 30]])
+                         ->add('avs_commentaire', TextareaType::class, ['attr' => ['rows' => 7,'cols' => 30, 'class' => 'avisC']])
                          ->getForm();
                          
             $form->handleRequest($request);
