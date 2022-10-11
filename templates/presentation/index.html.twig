@@ -8,22 +8,26 @@
     <h1> HairSpace </h1>
 </div>
 
-<table>
-        <tr>
-        {% for unePresentation in presentations %}
-            <td><p class="textPresentation">Notre salon de coiffure  se trouve dans . Nous sommes ouvert tout les jours de 8h à 20h.
-            Vous pouvez réserver par téléphone, mais ceci n'est pas obligatoire. </p>
-            <p class="textPresentation"> Nous coupons cheveux et barbes. Pour en savoir plus sur nos services, cliquer <a class="lienColor" href="prestation">ici</a>.</p></td>
-            <td><img class="imgPresentation" src="unePresentation.pst_image"></td>
+    
+    {% for unePresentation in presentations %}
+    <div class="rowE pt-5" style="align-items: center">
+        <div class="col">
+            <p class="textPresentation">{{ unePresentation.psttext }}</p>
+            <p class="textPresentation"> Nous coupons cheveux et barbes. Pour en savoir plus sur nos services, cliquer <a class="lienColor" href="prestation">ici</a>.</p>
+        </div>
+        <div class="col">
+            <img class="imgPresentation" src="assets/img/{{ unePresentation.pstimage}}">
+        </div>
+        {% if app.session.get('Droit') == 1 %}
 
-            {{ form_start(modifPres) }}
-            {{ form_widget(modifPres.pst_text) }}
-            {{ form_widget(modifPres.pst_image) }}</div>
-            <button type="submit" class="btnConnect">Modifier</button></td>
-            {{ form_end(modifPres) }}
-        {% endfor %}
-        </tr>
-</table>
+        {{ form_start(modifPres) }}
+        {{ form_widget(modifPres.pst_text) }} 
+        {{ form_widget(modifPres.pst_image) }}</div>
+        <button type="submit" class="btnModif">Modifier</button></td>
+        {{ form_end(modifPres) }}
+        {% endif %}
+    {% endfor %}
+    </tr>
 
 
 {% endblock %}

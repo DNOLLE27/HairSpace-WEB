@@ -11,12 +11,20 @@
 
 <div class="example-wrapper">
     <h1>Commentaire</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="message-envoye"><p>{{ message }}</p></div>
+    {% endfor %}
             
     {% for unUtilisateur in utilisateurs %}
     {% for unAvis in avis %}
-    {% if unUtilisateur.id == unAvis.avsutlnum.id %}      
-        </br><div class="boxListCom">{{unUtilisateur.utlidentifiant}} : </br> </br> 
-        {{unAvis.avscommentaire}}</div>
+    
+    {% if unUtilisateur.id == unAvis.avsutlnum.id %}   {% if app.session.get('Droit') == 1 %}
+        <form method="POST" action="suppr-avis"><button type="submit" class="button-AvisP">Supprimer</button><input type="hidden" id="idAvisSuppr" name="idAvisSuppr" value="{{unAvis.id}}"></form>
+        {% endif %}   
+        </br><div class="boxListCom">{{unUtilisateur.utlidentifiant}} a écrit à {{unAvis.avsdate|date('Y-m-d H:i') }} : </br> </br> 
+        {{unAvis.avscommentaire}}</div> 
+        
         </br>
          
     {% endif %}
@@ -25,16 +33,13 @@
     <div class="boxAvis">
     <div class="avisForme">
     
-    {% if app.session.get('Droit') == 1 %}
-    {{ app.session.get('ID') }}   
+    {% if app.session.get('ID') != "" %}
+        {{ app.session.get('ID') }} :  
+        <a class="inscriptionLien btnAvis" href="commentaire" >Ecrire un commentaire</a></div>
     {% else %}
-    {% if app.session.get('Droit') == 0 %}
-    {{ app.session.get('ID') }}
-    {% else %}Nom Prenom
+        <a class="inscriptionLien btnAvis" href="connexion" >Ecrire un commentaire</a></div>
     {% endif %}
-    {% endif %} :
     
-    <a class="inscriptionLien btnAvis" href="commentaire" >Ecrire un commentaire</a></div>
 </div>
 </div>
 

@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Presentation;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class PresentationController extends AbstractController
 {
@@ -16,33 +17,35 @@ class PresentationController extends AbstractController
      */
     public function edit(Request $request): Response
     {
+        $repo = new Presentation();
         $repo = $this->getDoctrine()->getRepository(Presentation::class);
+        $pres = $repo->findAll();
 
-        $pres = $repo-->find(1);
-            $presentation = new Presentation();
-            $pp = $this->getDoctrine()->getRepository(Presentation::class)->findAll();
+        $presentation = new Presentation();
+        $pp = $this->getDoctrine()->getRepository(Presentation::class)->find(1);
             
-            
-            
-            $form = $this->createFormBuilder($presentation)
-                         ->add('pst_text', TextareaType::class)
-                         ->add('pst_image')
-                         ->getForm();
+        $form = $this->createFormBuilder($pp)
+                        ->add('pst_text', TextareaType::class, ['attr' => ['rows' => 7,'cols' => 50, 'class' => 'pst_text']])
+                        ->add('pst_image', TextType::class, ['attr' => ['class' => 'pst_image']])
+                        ->getForm();
                          
-            $form->handleRequest($request);
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid())
         {
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
-            return $this->redirectToRoute('app_presentation');
-        }
-                         
             return $this->render('presentation/index.html.twig', [
                 'modifPres' => $form->createview(),
                 'presentations' => $pres,
-         
             ]);
+        } else {
+            return $this->render('presentation/index.html.twig', [
+                'modifPres' => $form->createview(),
+                'presentations' => $pres,
+            ]);
+        }
+                         
+           
 
         }
 }
