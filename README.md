@@ -40,7 +40,7 @@ Une fois le dossier du projet ouvert dans l'éditeur de code, il faut installer 
 composer install
 ```
 
-Si des erreurs sont car de nouvelles versions sont disponnibles pour les prérequis du projet :
+Si des erreurs sont présentes lors de l'installation des prérequis du projet, c'est parce que de nouvelles versions sont disponnibles pour les prérequis du projet :
 ```
 composer update
 ```
@@ -59,6 +59,11 @@ Dans le terminal de l'éditeur de code, il faut saisir la commande suivant pour 
 php bin/console doctrine:migrations:migrate
 ```
 
+Si des problèmes ont rencontrés lors de l'importation de la structure de la base de données, il faut éxécuté la commande suivante avant de ré-éxécuter la précédente :
+```
+php bin/console make:migration
+```
+
 <br/>
 
 Une fois que toutes les étapes précédentes ont été réalisé, il ne manque plus qu'à lancer le serveur Symfony avec la commande suivante :
@@ -71,7 +76,7 @@ symfony serve:start
 
 <br/>
 
-*<p align="center">Nous sommes tous les trois des étudiant en BTS SIO (SLAM) à l'établissement Saint-Adjutor, à Vernon.</p>*
+*<p align="center">Nous sommes tous les deux des étudiants en BTS SIO (SLAM) à l'établissement Saint-Adjutor, à Vernon.</p>*
 
 <p align="center"><img width="350" height="100" src="https://www.stadjutor.com/wp-content/uploads/2021/01/logo-stadjutor.png"></p>
 
@@ -95,7 +100,7 @@ symfony serve:start
 
 - Système d'authentification avec couple identifiant/mot de passe et des droits (Admin/Utilisateur). Si il n'y a pas de compte administrateur dans la base de données, le premier compte que l'on pourra inscrire sera un compte admin, sinon se serra un compte utilisateur.
 
-- Une page des prestations où l'adminsitrateur pourra ajouter, supprimer ou modifier les prestations qui est proposé dans le salon de coiffure HairSpace.
+- Une page des prestations où l'adminsitrateur pourra ajouter, supprimer ou modifier les prestations qui est proposées dans le salon de coiffure HairSpace.
 
 - Une page de présentation qui donne des informations sur le salon de coiffure et que l'administrateur peut modifier.
 
