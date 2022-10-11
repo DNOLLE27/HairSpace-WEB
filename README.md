@@ -117,7 +117,7 @@ symfony serve:start
         <td><center><a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade">CSS</a></center></td>
     </tr>
     <tr>
-        <td><p align="center"><img width="120" height="120" src="https://github.com/symfony.png"></p></td>
+        <td><p align="center"><img width="120" height="100" src="https://github.com/symfony.png"></p></td>
         <td><p align="center"><img width="90" height="120" src="https://camo.githubusercontent.com/a601d4e360b1d58e2abc0d68901a2fbabfa6708452b5f14eceaf18deb5665e6b/68747470733a2f2f7777772e64727570616c2e6f72672f66696c65732f7374796c65732f677269642d332f7075626c69632f70726f6a6563742d696d616765732f747769675f312e706e673f69746f6b3d4e46563764624531"></p></td>
         <td><p align="center"><img width="180" height="120" src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png"></p></td>
         <td><p align="center"><img width="180" height="120" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"></p></td>
