@@ -109,12 +109,12 @@ symfony serve:start
 
 <table>
     <tr>
-        <td><a href="https://symfony.com/">Symfony</a></td>
-        <td><a href="https://twig.symfony.com/">Twig</a></td>
-        <td><a href="https://www.mysql.com/fr/">MySQL</a></td>
-        <td><a href="https://www.php.net/">PHP</a></td>
-        <td><a href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language">HTML</a></td>
-        <td><a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade">CSS</a></td>
+        <td><a href="https://symfony.com/" align="center">Symfony</a></td>
+        <td><a href="https://twig.symfony.com/" align="center">Twig</a></td>
+        <td><a href="https://www.mysql.com/fr/" align="center">MySQL</a></td>
+        <td><a href="https://www.php.net/" align="center">PHP</a></td>
+        <td><a href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language" align="center">HTML</a></td>
+        <td><a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" align="center">CSS</a></td>
     </tr>
     <tr>
         <td><p align="center"><img width="120" height="110" src="https://github.com/symfony.png"></p></td>
