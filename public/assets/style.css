@@ -155,7 +155,7 @@ h1, h3
 .imgPresentation{
     width: 80%;
     margin-top: 10%;
-    border-radius: 20%;
+    border-radius: 10%;
     border: 6px solid #f08fe3;
    
 }
@@ -702,7 +702,7 @@ a
 
 .btnAvisC{
     position:fixed;
-    top: 78%;
+    top: 82%;
     left: 49.5%;
 }
 
@@ -742,11 +742,9 @@ a
 
     position: fixed;
     width: 35%;
-    height: 60%;
-    margin-bottom: 5%;
-    margin-top: 4%;
-    margin-right: 10%;
-    margin-left: 5%;
+    height: 65%;
+    top: 25%;
+    left: 34%;
     background-color: #FEE9FF;
     box-shadow: 0em 0em 2em grey;
     border-radius:20px;
@@ -758,12 +756,15 @@ a
     padding-top: 5%;
 }
 
+.commentaire{
+    margin-left: 38%;
+}
 .boxCommentaire textarea
 {
     background-color: #DBAAE3;
     position: fixed;
     top: 37%;
-    left:43%;
+    left:42%;
     
     
 }
@@ -822,6 +823,7 @@ button:focus:active
     position: absolute;
     margin-left: 10%;
     margin-top: 4%;
+    border: #701585 2px solid;
    
 
 }
@@ -831,6 +833,7 @@ button:focus:active
     position: absolute;
     margin-left: 65%;
     margin-top: 4%;
+    border: #701585 2px solid;
     
 
 }
@@ -842,7 +845,7 @@ button:focus:active
 }
 
 .rowE{
-    display: grid;;
+    display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     margin-top: 10%;
@@ -850,6 +853,10 @@ button:focus:active
 
 .button-AvisP{
     position: absolute;
-    margin-left: 35%;
-    margin-top: 3.5%;
+    margin-left: 40%;
+    margin-top: 4%;
+}
+
+.avisC{
+    border: #bc64cc 2px solid;
 }
