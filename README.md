@@ -107,14 +107,14 @@ symfony serve:start
 
 ## <p align="center">Technologies :</p>
 
-<center><table>
+<table>
     <tr>
-        <td><center><a href="https://symfony.com/">Symfony</a></center></td>
-        <td><center><a href="https://twig.symfony.com/">Twig</a></center></td>
-        <td><center><a href="https://www.mysql.com/fr/">MySQL</a></center></td>
-        <td><center><a href="https://www.php.net/">PHP</a></center></td>
-        <td><center><a href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language">HTML</a></center></td>
-        <td><center><a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade">CSS</a></center></td>
+        <td><a href="https://symfony.com/">Symfony</a></td>
+        <td><a href="https://twig.symfony.com/">Twig</a></td>
+        <td><a href="https://www.mysql.com/fr/">MySQL</a></td>
+        <td><a href="https://www.php.net/">PHP</a></td>
+        <td><a href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language">HTML</a></td>
+        <td><a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade">CSS</a></td>
     </tr>
     <tr>
         <td><p align="center"><img width="120" height="110" src="https://github.com/symfony.png"></p></td>
@@ -124,7 +124,7 @@ symfony serve:start
         <td><p align="center"><img width="120" height="110" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/langfr-1024px-HTML5_logo_and_wordmark.svg.png"></p></td>
         <td><p align="center"><img width="90" height="110" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/langfr-800px-CSS3_logo_and_wordmark.svg.png"></p></td>
     </tr>
-</table></center>
+</table>
 
 ## <p align="center">Merci !</p>
 
