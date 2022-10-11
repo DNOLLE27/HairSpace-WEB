@@ -107,24 +107,9 @@ symfony serve:start
 
 ## <p align="center">Technologies :</p>
 
-<table>
-    <tr>
-        <td><a href="https://symfony.com/" align="center">Symfony</a></td>
-        <td><a href="https://twig.symfony.com/" align="center">Twig</a></td>
-        <td><a href="https://www.mysql.com/fr/" align="center">MySQL</a></td>
-        <td><a href="https://www.php.net/" align="center">PHP</a></td>
-        <td><a href="https://fr.wikipedia.org/wiki/Hypertext_Markup_Language" align="center">HTML</a></td>
-        <td><a href="https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade" align="center">CSS</a></td>
-    </tr>
-    <tr>
-        <td><p align="center"><img width="120" height="110" src="https://github.com/symfony.png"></p></td>
-        <td><p align="center"><img width="90" height="120" src="https://camo.githubusercontent.com/a601d4e360b1d58e2abc0d68901a2fbabfa6708452b5f14eceaf18deb5665e6b/68747470733a2f2f7777772e64727570616c2e6f72672f66696c65732f7374796c65732f677269642d332f7075626c69632f70726f6a6563742d696d616765732f747769675f312e706e673f69746f6b3d4e46563764624531"></p></td>
-        <td><p align="center"><img width="180" height="110" src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png"></p></td>
-        <td><p align="center"><img width="180" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"></p></td>
-        <td><p align="center"><img width="120" height="110" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/langfr-1024px-HTML5_logo_and_wordmark.svg.png"></p></td>
-        <td><p align="center"><img width="90" height="110" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/langfr-800px-CSS3_logo_and_wordmark.svg.png"></p></td>
-    </tr>
-</table>
+|<center>[Symfony](https://symfony.com/)</center>|[Twig](https://twig.symfony.com/)|[MySQL](https://www.mysql.com/fr/)|[PHP](https://www.php.net/)|[HTML](https://fr.wikipedia.org/wiki/Hypertext_Markup_Language)|[CSS](https://fr.wikipedia.org/wiki/Feuilles_de_style_en_cascade)|
+|-------|----|-----|---|----|---|
+|<p align="center"><img width="120" height="110" src="https://github.com/symfony.png"></p>|<p align="center"><img width="90" height="120" src="https://camo.githubusercontent.com/a601d4e360b1d58e2abc0d68901a2fbabfa6708452b5f14eceaf18deb5665e6b/68747470733a2f2f7777772e64727570616c2e6f72672f66696c65732f7374796c65732f677269642d332f7075626c69632f70726f6a6563742d696d616765732f747769675f312e706e673f69746f6b3d4e46563764624531"></p>|<p align="center"><img width="180" height="110" src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/62/MySQL.svg/1200px-MySQL.svg.png"></p>|<p align="center"><img width="180" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png">|<p align="center"><img width="120" height="110" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/langfr-1024px-HTML5_logo_and_wordmark.svg.png"></p>|<p align="center"><img width="90" height="110" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/langfr-800px-CSS3_logo_and_wordmark.svg.png"></p>|
 
 ## <p align="center">Merci !</p>
 
