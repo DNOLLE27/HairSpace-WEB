@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Avis{% endblock %}
+
+{% block body %}
+
+
+
+<div class="example-wrapper">
+    <h1 class="commentaire">Commentaire</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="message-envoye"><p>{{ message }}</p></div>
+    {% endfor %}
+            
+    {% for unUtilisateur in utilisateurs %}
+    {% for unAvis in avis %}
+    
+    {% if unUtilisateur.id == unAvis.avsutlnum.id %}   {% if app.session.get('Droit') == 1 %}
+        <form method="POST" action="suppr-avis"><button type="submit" class="button-AvisP">Supprimer</button><input type="hidden" id="idAvisSuppr" name="idAvisSuppr" value="{{unAvis.id}}"></form>
+        {% endif %}   
+        </br><div class="boxListCom">{{unUtilisateur.utlidentifiant}}{% if app.session.get('Droit') == 1 %} (Admin){% endif %}  a écrit à {{unAvis.avsdate|date('Y-m-d H:i') }} : </br> </br> 
+        {{unAvis.avscommentaire}}</div> 
+        
+        </br>
+         
+    {% endif %}
+    {% endfor %}     
+    {% endfor %}
+    <div class="boxAvis">
+    <div class="avisForme">
+    
+    {% if app.session.get('ID') != "" %}
+        {{ app.session.get('ID') }} :  
+        <a class="inscriptionLien btnAvis" href="commentaire" >Ecrire un commentaire</a></div>
+    {% else %}
+        <a class="inscriptionLien btnAvis" href="connexion" >Ecrire un commentaire</a></div>
+    {% endif %}
+    
+</div>
+</div>
+
+
+
+{% endblock %}
