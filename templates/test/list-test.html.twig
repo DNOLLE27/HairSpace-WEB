@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Test list{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+<div class="example-wrapper">
+    <h1 class="commentaire">Test listes</h1>
+<div class="row align-items-center text-center">
+            
+ {% for unTest in Test %}
+    <div class="col">
+        <div class="ml">
+        
+            <p class="textPresentation">
+            <p> ID : {{ unTest.id }}</p>
+            <p>Libelle : {{ unTest.libelleTest }}</p>
+            <td><form method="POST">
+        <button type="submit" name="modifier">Modifier</button>
+        <input type="hidden" id="idTestModif" name="idTestModif" value="{{unTest.id}}">
+    </form></div>
+    </div>
+        
+    {% endfor %}
+   </div>
+   
+    </tr>
+     <a class="nav-link" href="{{ path('app_ajout_test') }}">Ajout</a>
+
+{% endblock %}

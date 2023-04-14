@@ -860,3 +860,53 @@ button:focus:active
 .avisC{
     border: #bc64cc 2px solid;
 }
+
+.ml{
+
+    
+    width: 95%;
+    height: 60%;
+    margin-bottom: 5%;
+    margin-top: 6%;
+    margin-right: 10%;
+    margin-left: 0%;
+    padding: 0% 2%;
+    background: #C497EB;
+    box-shadow: 0em 0em 2em grey;
+    border-radius:20px;
+    border: 3px solid black;
+}
+
+.mlModif{
+
+    
+    width: 100%;
+    height: 60%;
+    margin-bottom: 5%;
+    margin-top: 6%;
+    margin-right: 10%;
+    margin-left: 0%;
+    padding: 0% 2%;
+    background: #C497EB;
+    box-shadow: 0em 0em 2em grey;
+    border-radius:20px;
+    border: 3px solid black;
+}
+
+.btnML{
+    
+    margin-left: 40%;
+    margin-bottom: 3%;
+}
+
+.ss{
+    margin-top: 3%;
+}
+
+.ssS{
+    margin-top: 25%;
+}
+
+.imgEven{
+    width: 50%;
+}

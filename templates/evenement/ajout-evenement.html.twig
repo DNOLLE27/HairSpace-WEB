@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Ajout Evenement{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+<div class="example-wrapper">
+    <h1 class="commentaire">Evenement</h1>
+    <div class="boxCommentaire">
+           <div class="leNom"> 
+                {{ form_start(ajoutEvenement) }}
+               <div class="ssS"> Nom : {{ form_widget(ajoutEvenement.nom_Evenement) }}</div>
+               <div class="ss">  {{ form_widget(ajoutEvenement.description) }}</div>
+               <div class="ss"> Lien image: {{ form_widget(ajoutEvenement.lien_image) }}</div>
+               <div class="ss"> Offre : {{ form_widget(ajoutEvenement.offre_prevu) }}</div>
+               <div class="ss"> Nombre de place : {{ form_widget(ajoutEvenement.nb_place) }}</div>
+                <button type="submit" class="btnConnect">Ajouter un evenement</button></td>
+                {{ form_end(ajoutEvenement) }}
+                <a class="inscriptionLien btnAvisC" href="{{ path('app_evenement') }}" >Retour</a></div>   
+            </div>
+     
+    </div>
+
+</div>
+
+
+{% endblock %}

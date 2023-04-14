@@ -67,7 +67,7 @@ class ConnexionController extends AbstractController
         }
         else
         {
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('app_index');
         }
     }
 }

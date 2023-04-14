@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Evenements list{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+<div class="example-wrapper">
+    <h1 class="commentaire">Liste des evenements</h1>
+    {# {% if app.session.get('Droit') == 1 %} #}
+    <a class="nav-link" href="{{ path('app_ajout_evenement') }}">Ajout</a>
+    {# {% endif %} #}
+<div class="row align-items-center text-center">
+            
+ {% for unEvenement in evenements %}
+    <div class="col">
+        <div class="ml">
+        
+            <p class="textPresentation">
+            <img class="imgEven" src="{{unEvenement.lienImage}}">
+            <p> nom :{{ unEvenement.nomEvenement }}</p>
+            <p> description : {{ unEvenement.description }}</p>
+            
+            <p> offre : {{ unEvenement.offrePrevu }}</p>
+            <p> NB place :{{ unEvenement.nbPlace }}</p>
+       {# {% if app.session.get('Droit') == 1 %} #}
+        <form method="POST" action="suppr-evenement"><button type="submit" class="button-EvenementS">Supprimer</button><input type="hidden" id="idEvenSuppr" name="idEvenSuppr" value="{{unEvenement.id}}"></form>
+        {# {% endif %} #}
+        </div>
+    </div>
+        
+    {% endfor %}
+   </div>
+   
+    </tr>
+     
+
+{% endblock %}

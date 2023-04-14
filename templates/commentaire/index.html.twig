@@ -17,7 +17,7 @@
                 {{ form_widget(ajoutAvis.avs_commentaire) }}</div>
                 <button type="submit" class="btnConnect">Ajouter un commentaire</button></td>
                 {{ form_end(ajoutAvis) }}
-                <a class="inscriptionLien btnAvisC" href="avis" >Retour</a></div>   
+                <a class="inscriptionLien btnAvisC" href="{{ path('app_avis') }}" >Retour</a></div>   
             {% else %}
                 {% if app.session.get('Droit') == 0 %}
                     {{ app.session.get('ID') }} :
@@ -25,9 +25,9 @@
                     {{ form_widget(ajoutAvis.avs_commentaire) }}</div>
                     <button type="submit" class="btnConnect">Ajouter un commentaire</button></td>
                     {{ form_end(ajoutAvis) }}
-                    <a class="inscriptionLien btnAvisC" href="avis" >Retour</a></div>
+                    <a class="inscriptionLien btnAvisC" href="{{ path('app_avis') }}" >Retour</a></div>
                 {% else %}
-                <a class="inscriptionLien btnS" href="avis">Retour</a></div>
+                <a class="inscriptionLien btnS" href="{{ path('app_avis') }}">Retour</a></div>
             {% endif %}
             {% endif %} 
             </div>

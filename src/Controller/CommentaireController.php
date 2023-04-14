@@ -21,12 +21,12 @@ class CommentaireController extends AbstractController
         if ($this->get('session')->get('ID') != "")
         {
             $avis = new Avis();
-            date_default_timezone_set('Europe/Paris');
-            $aff = new \DateTime('now');
+            date_default_timezone_set('Europe/Paris'); // heure de la france
+            $date = new \DateTime('now'); // date du jour
             
             
             $form = $this->createFormBuilder($avis)
-                         ->add('avs_commentaire', TextareaType::class, ['attr' => ['rows' => 7,'cols' => 30, 'class' => 'avisC']])
+                         ->add('avs_commentaire', TextareaType::class, ['attr' => ['rows' => 7,'cols' => 30, 'class' => 'avisC']])  // textarea supremacy
                          ->getForm();
                          
             $form->handleRequest($request);
@@ -37,12 +37,12 @@ class CommentaireController extends AbstractController
 
 
             $avis = $form->getData();
-            $avis->setAvsDate($aff);
-            $avis->setAvsUtlNum($user);
+            $avis->setAvsDate($date); // on rentre les valeurs manquantes
+            $avis->setAvsUtlNum($user); // on rentre les valeurs manquantes
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($avis);
-            $entityManager->flush();
+            $entityManager->flush();   // envoie vers base 
             return $this->redirectToRoute('app_avis');
         }
                          
