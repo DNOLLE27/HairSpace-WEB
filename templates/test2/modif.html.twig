@@ -11,23 +11,19 @@
     <h1 class="commentaire">Test Modif</h1>
 <div class="row align-items-center text-center">
             
-        
-
 <div class="col">
          <div class="mlModif">  
-        {% if app.session.get('Droit') == 1 %}
-        {{ form_start(modifTest) }}</br>
-        <p>Libelle : {{ form_widget(modifTest.libelle_test) }}</p>     
+         {% if app.session.get('Droit') == 1 %}
+        {{ form_start(modifTest2) }}</br>
+        <p>Libelle : {{ form_widget(modifTest2.libelle_test2) }}</p>     
         <button type="submit" class="btnML">Modifier</button></td>
-        {{ form_end(modifTest) }}
-        {% endif %}
+        {{ form_end(modifTest2) }}
          </div>
          </div>
-
-    
+{% endif %}
    </div>
    
     </tr>
-     <a class="nav-link" href="{{ path('app_ajout_test') }}">Ajout</a>
+     <a class="nav-link" href="{{ path('app_test2') }}">Retour</a>
 
 {% endblock %}

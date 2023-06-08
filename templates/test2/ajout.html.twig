@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Test{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+<div class="example-wrapper">
+    <h1 class="commentaire">Test2</h1>
+    <div class="boxCommentaire">
+           <div class="leNom"> 
+           {% if app.session.get('Droit') == 1 %}
+                {{ form_start(ajoutTest2) }}
+                {{ form_widget(ajoutTest2.libelle_test2) }}</div>
+                <button type="submit" class="btnConnect">Ajouter un test2</button></td>
+                {{ form_end(ajoutTest2) }}
+            {% endif %}
+                <a class="inscriptionLien btnAvisC" href="{{ path('app_test2') }}" >Retour</a></div>   
+            </div>
+     
+    </div>
+
+</div>
+
+
+{% endblock %}

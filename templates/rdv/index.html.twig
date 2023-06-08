@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Agenda{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+{# <script>
+function submitForm() {
+    document.getElementById("niveau").submit(); 
+}
+</script> #}
+{% if app.session.get('Droit') == 1 %}
+<div class="example-wrapper">
+    <h1 class="commentaire">Rdv Listes</h1>
+    
+
+    {# <div class="text-center mb-3">
+        <form method="GET" action="{{ path('app_test_list') }}" id="niveau">
+            <label for="niveau">Filtrer par niveau :</label>
+            <select id="niveau" name="niveau" onchange="submitForm()">
+            <option value="">Filtrer par niveau</option>
+                <option value="all">Tous les niveaux</option>
+                {% for niveau in niveaux %}
+                    <option value="{{ niveau.id }}">{{ niveau.libelleNiveau }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div> #}
+
+<div class="row align-items-center text-center">
+            
+ {% for unRdv in rdv %}
+    <div class="col">
+        <div class="ml">
+        
+            <p class="textPresentation">
+            <p>Nom : {{ unRdv.nomClient }}</p> 
+            <p>Prenom : {{ unRdv.prenomClient }}</p>
+            {# {% for unePresta in prestation %}
+            {% if unRdv.prestation_id == unePresta.id  %}
+            <p>Pestation : {{ unePresta.prs_libelle }}</p>
+            {% endif %}
+            {% endfor %}   #}
+            <p>Plage Horaire : {{ unRdv.plageHoraire }}</p>
+            {# <p>Date : {{ unRdv.dateRdv }}</p> #}
+            <td>
+            {% if app.session.get('Droit') == 1 %}
+            <form method="POST" action="modif-rdv">
+                <input type="hidden" id="idRdvModif" name="idRdvModif" value="{{unRdv.id}}">
+                <button type="submit" name="modifier">Modifier</button>
+            </form>
+            <form method="POST" action="suppr-rdv"><button type="submit">Supprimer</button>
+            <input type="hidden" id="idRdvSuppr" name="idRdvSuppr" value="{{unRdv.id}}">
+            </form>
+            {% endif %}
+            
+        </div>
+    </div>
+        
+    {% endfor %}
+   </div>
+   {% endif %}
+    </tr>
+    {% if app.session.get('Droit') == 1 %}
+      <a class="nav-link" href="{{ path('app_rdv_ajout') }}">Ajout</a> 
+      {% endif %}
+
+{% endblock %}

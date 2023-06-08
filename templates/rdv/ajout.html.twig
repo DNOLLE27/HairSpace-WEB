@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Test{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+<div class="example-wrapper">
+    <h1 class="commentaire">Test2</h1>
+    <div class="boxCommentaire">
+           <div class="leNom"> 
+           {% if app.session.get('Droit') == 1 %}
+                {{ form_start(ajoutRdv) }} 
+               <p> Nom Client: {{ form_widget(ajoutRdv.nom_client) }} </p>
+               <p> Prenom Client: {{ form_widget(ajoutRdv.prenom_client) }} </p>
+               <p> Horaire: {{ form_widget(ajoutRdv.plage_horaire) }} </p>
+               <p> Date: {{ form_widget(ajoutRdv.date_rdv) }} </p>
+                {# {{ form_widget(ajoutRdv.prestation_id) }} #}
+                </div>
+                <button type="submit" class="btnConnect">Ajouter un rendez vous</button></td>
+                {{ form_end(ajoutRdv) }}
+            {% endif %}
+                <a class="inscriptionLien btnAvisC" href="{{ path('app_rdv_list') }}" >Retour</a></div>   
+            </div>
+     
+    </div>
+
+</div>
+
+
+{% endblock %}

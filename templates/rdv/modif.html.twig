@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - RDV Modif{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+<div class="example-wrapper">
+    <h1 class="commentaire">RDV Modif</h1>
+<div class="row align-items-center text-center">
+            
+<div class="col">
+         <div class="mlModif">  
+         {% if app.session.get('Droit') == 1 %}
+        {{ form_start(modifRdv) }}</br>
+        <p> Nom Client: {{ form_widget(modifRdv.nom_client) }} </p>
+               <p> Prenom Client: {{ form_widget(modifRdv.prenom_client) }} </p>
+               <p> Horaire: {{ form_widget(modifRdv.plage_horaire) }} </p>
+               <p> Date: {{ form_widget(modifRdv.date_rdv) }} </p>
+                {# {{ form_widget(ajoutRdv.prestation_id) }} #}  
+        <button type="submit" class="btnML">Modifier</button></td>
+        {{ form_end(modifRdv) }}
+         </div>
+         </div>
+{% endif %}
+   </div>
+   
+    </tr>
+     <a class="nav-link" href="{{ path('app_test2') }}">Retour</a>
+
+{% endblock %}

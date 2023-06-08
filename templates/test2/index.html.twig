@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HairSpace - Test list{% endblock %}
+
+{% block body %}
+
+
+<link href="../assets/style.css" rel="stylesheet"/>
+
+<script>
+function submitForm() {
+    document.getElementById("niveau").submit(); 
+}
+</script>
+
+<div class="example-wrapper">
+    <h1 class="commentaire">Test listes</h1>
+    
+
+    <div class="text-center mb-3">
+        <form method="GET" action="{{ path('app_test_list') }}" id="niveau">
+            <label for="niveau">Filtrer par niveau :</label>
+            <select id="niveau" name="niveau" onchange="submitForm()">
+            <option value="">Filtrer par niveau</option>
+                <option value="all">Tous les niveaux</option>
+                {% for niveau in niveaux %}
+                    <option value="{{ niveau.id }}">{{ niveau.libelleNiveau }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+
+<div class="row align-items-center text-center">
+            
+ {% for unTest2 in test2 %}
+    <div class="col">
+        <div class="ml">
+        
+            <p class="textPresentation">
+            <p> ID : {{ unTest2.id }}</p>
+            <p>Libelle : {{ unTest2.libelleTest2 }}</p> 
+            <td>
+            {% if app.session.get('Droit') == 1 %}
+            <form method="POST" action="modif-test2">
+                <input type="hidden" id="idTest2Modif" name="idTest2Modif" value="{{unTest2.id}}">
+                <button type="submit" name="modifier">Modifier</button>
+            </form>
+            <form method="POST" action="suppr-test2"><button type="submit">Supprimer</button>
+            <input type="hidden" id="idTest2Suppr" name="idTest2Suppr" value="{{unTest2.id}}">
+            </form>
+            {% endif %}
+            
+        </div>
+    </div>
+        
+    {% endfor %}
+   </div>
+   
+    </tr>
+    {% if app.session.get('Droit') == 1 %}
+      <a class="nav-link" href="{{ path('app_ajout_test2') }}">Ajout</a> 
+      {% endif %}
+
+{% endblock %}
